@@ -4,3 +4,5 @@
 	* Added 'README'.
 	* Moved 'centos7/install_rivendell_centos7.sh' to
 	'install_rivendell.sh'.
+2016-06-24 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'twolame' and 'libmad' to the set of dependency packages.

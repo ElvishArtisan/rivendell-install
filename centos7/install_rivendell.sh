@@ -19,9 +19,9 @@ wget http://$REPO_HOSTNAME/CentOS/7com/Paravel-Commercial.repo -P /etc/yum.repos
 wget http://$REPO_HOSTNAME/CentOS/7/RPM-GPG-KEY-Paravel-Broadcast -P /etc/pki/rpm-gpg/
 
 #
-# Install MySQL/MariaDB
+# Install Dependencies
 #
-yum -y install qt3-config polymer paravelview mariadb-server ntp
+yum -y install qt3-config polymer paravelview mariadb-server ntp emacs twolame libmad
 systemctl start mariadb
 systemctl enable mariadb
 
