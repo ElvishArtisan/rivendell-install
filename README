@@ -59,8 +59,8 @@ INSTALLATION
 ------------
 To run the installation script, create a temporary directory on the target
 system and copy contents of the directory in this package that is appropriate
-for the distro version --e.g. 'centos7/' for a CentOS 7.x system). Then,
-'cd' into that directory and do (as root):
+for the distro version --e.g. 'centos7/' for a CentOS 7.x system) into that
+directory. Then, 'cd' into that directory and do (as root):
 
     ./install_rivendell.sh
 
