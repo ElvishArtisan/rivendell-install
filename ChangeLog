@@ -1,2 +1,6 @@
 2016-06-24 Fred Gleason <fredg@paravelsystems.com>
 	* Initial repo creation.
+2016-06-24 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'README'.
+	* Moved 'centos7/install_rivendell_centos7.sh' to
+	'install_rivendell.sh'.
