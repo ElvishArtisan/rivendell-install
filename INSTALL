@@ -1,0 +1,96 @@
+This is the 'INSTALL' file for the rivendell-install package.
+
+Please see the 'README' file for an overview and basic rationale for
+this package.
+
+Installing Rivendell using the rivendell-install package consists of three
+primary steps:
+
+1) Install the base RHEL (CentOS, Scientific Linux) distribution in
+   'Minimal' mode and establish an Internet connection.
+
+2) Bootstrap and run the installation script.
+
+3) Reboot and finish up final details.
+
+
+INSTALL BASE DISTRIBUTION
+-------------------------
+The base distribution should be installed in 'Minimal' mode, which will
+result in a fairly spartan command-line only environment after the initial
+reboot.  After logging in as user 'root', networking can be initialized by
+running the following commands from a root shell:
+
+     nmcli connection show
+
+Will print a list of available network connections (one for each network
+interface). For example:
+
+     NAME  UUID                                  TYPE            DEVICE
+     eth0  96e879a9-887d-405b-a340-cab85fcc8c15  802-3-ethernet  --
+
+To start a given interface and have it use DHCP to assign its parameters
+automatically, give the following command:
+
+    nmcli connection up <conn-name>
+
+Where <conn-name> is the name of the connections --.e.g. 'eth0'.
+
+To start a given interface and assign IP parameters manually, give the
+following command:
+
+    nmcli con mod <conn-name> ipv4.method manual ipv4.addr
+      "<ip-addr>/<mask-size> <gateway-addr>, <dns1-addr>, <dns2-addr>"
+
+Once the network has been initialized, the settings can be made persistent
+by the command:
+
+    nmcli con mod <conn-name> connection.autoconnect yes
+
+Now, set the hostname of system with the command:
+
+    hostnamectl set-hostname <hostname>
+
+Names should be all lower-case, alphanumeric and not more than 32 characters.
+
+Once Internet access is functioning, update the entire installation with
+the command:
+
+    yum -y update
+
+Reboot when the update is complete with the command:
+
+    reboot
+
+The system is now ready to have Rivendell installed.
+
+
+BOOTSTRAP INSTALLATION SCRIPT
+-----------------------------
+Log back in as user 'root' and run the following commands:
+
+    yum -y install wget
+
+    wget http://download.paravelsystems.com/CentOS/7/Paravel-Broadcast.repo -P /etc/yum.repos.d/
+
+    wget http://download.paravelsystems.com/CentOS/7/RPM-GPG-KEY-Paravel-Broadcast -P /etc/pki/rpm-gpg
+
+    yum -y install rivendell-install
+
+Then, start the installation with the command:
+
+    ./install_rivendell.sh
+
+Depending upon the speed of the Internet connection, installation can take
+between several minutes to an hour or more.
+
+
+FINISHING UP
+------------
+After the installation has been completed and the system rebooted, the
+system will come back in GUI mode, automatically logged in as user 'rd'.
+To secure the system fully, set the password for the local 'rd' account
+with the following command (as root):
+
+     passwd rd
+

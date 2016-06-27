@@ -1,8 +1,13 @@
 This is the README file for the rivendell-install package.
 
+This software comes with ABSOLUTELY NO WARRANTY.  See the file COPYING for
+details.
+
 Rivendell-install is a set of scripts and related files for installing
 the Rivendell Radio Automation System on RHEL-derived Linux distributions
 (such as RedHat Enterprise Linux, CentOS or Scientific Linux).
+
+Installation instructions can be found in the 'INSTALL' file.
 
 RATIONALE
 ---------
@@ -10,13 +15,13 @@ Rivendell on RHEL-derived distributions has customarily been installed
 by means of 'appliances' --i.e. customized versions of the distro's installer
 image that contain the necessary additional software and configuration
 scripts.  These appliances use 'Kickstart', an embedded utility that allows
-installations to be tailored to a specific set of canned instructions and
-configurations.  This approach has proven to be rather brittle in several
-respects. The intended use case for Kickstart is that of deploying a set,
-static system configuration onto a known hardware platform.  Using it as an
-'extension' of the RHEL installer is arguably an abuse of this intent.
-In particular, Kickstart does not cope well when confronted with target
-hardware that varies significantly from the original 'prototype' system
+installations to be tailored in accordance with a specific set of canned
+instructions and configurations.  This approach has proven to be rather
+brittle in several respects. The intended use case for Kickstart is that of
+deploying a set, static system configuration onto a known hardware platform.
+Using it as an 'extension' of the RHEL installer is arguably an abuse of this
+intent.  In particular, Kickstart does not cope well when confronted with
+target hardware that varies significantly from the original 'prototype' system
 for which the Kickstart instructions were originally designed --e.g. those
 with significantly different disc capacities.  A particular bugbear in this
 regard has been the advent of systems with BIOSes that implement the
@@ -30,41 +35,13 @@ that requires extensive testing of the revised applicance before release.
 
 With all of the above in mind, the scripts in this package take a new approach.
 Installation of the base RHEL distribution is now done using the standard
-installer images.  Once that base installation is complete and certain
-prerequisites met (see below), the installer script is then run, which
-downloads all necessary packages and performs the required configuration
-to turn the 'vanilla' installation into a Rivendell workstation.  This has
-two primary benefits over the 'appliance' model: the script is independent
-of the particular point release of the target system (thus largely
-eliminating maintenance overhead), while downloading the Rivendell packages
-from the 'live' online repositories means that whatever the 'current'
-Rivendell version is will be the one installed.
+installer images.  Once that base installation is complete, the installer
+script is then run, which downloads all necessary packages and performs the
+required configuration to turn the 'vanilla' installation into a Rivendell
+workstation.  This has two primary benefits over the 'appliance' model: the
+script is independent of the particular point release of the target system
+(thus largely eliminating maintenance overhead), while downloading the
+Rivendell packages from the 'live' online repositories means that whatever
+the 'current' Rivendell version is will be the one installed.
 
-
-PREREQUISITES
--------------
-Before running the installation script, the following requirements must be
-met:
-
-1) The target distribution must be installed and running in GUI desktop mode.
-
-2) Networking must be configured and the system able to access the Internet.
-
-3) All pending OS updates must be applied ('yum update').
-
-4) SELinux must be operating in 'permissive' or 'disabled' mode.
-
-
-INSTALLATION
-------------
-To run the installation script, create a temporary directory on the target
-system and copy contents of the directory in this package that is appropriate
-for the distro version --e.g. 'centos7/' for a CentOS 7.x system) into that
-directory. Then, 'cd' into that directory and do (as root):
-
-    ./install_rivendell.sh
-
-The script will run several checks and (possibly) report on problems found.
-Once any detected problems are corrected, Rivendell will be downloaded and
-installed without any further operator intervention needed.
 

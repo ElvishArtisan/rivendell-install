@@ -1,0 +1,11 @@
+--- custom.conf-orig	2016-06-27 12:06:44.777183125 -0400
++++ custom.conf	2016-06-27 12:07:25.751994004 -0400
+@@ -1,6 +1,8 @@
+ # GDM configuration storage
+ 
+ [daemon]
++AutomaticLogin=rd
++AutomaticLoginEnable=true
+ 
+ [security]
+ 
