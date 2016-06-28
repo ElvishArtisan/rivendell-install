@@ -30,17 +30,20 @@ interface). For example:
      eth0  96e879a9-887d-405b-a340-cab85fcc8c15  802-3-ethernet  --
 
 To start a given interface and have it use DHCP to assign its parameters
-automatically, give the following command:
+automatically, give the following commands:
 
+    nmcli conn mod <conn-name> ipv4.method auto
     nmcli connection up <conn-name>
 
 Where <conn-name> is the name of the connections --.e.g. 'eth0'.
 
 To start a given interface and assign IP parameters manually, give the
-following command:
+following commands:
 
-    nmcli con mod <conn-name> ipv4.method manual ipv4.addr
-      "<ip-addr>/<mask-size> <gateway-addr>, <dns1-addr>, <dns2-addr>"
+    nmcli con mod <conn-name> ipv4.addresses <ip-addr>/<prefix>
+      ipv4.gateway <gateway-addr> ipv4.dns "<dns1-addr> <dns2-addr>"
+    nmcli conn mod <conn-name> ipv4.method manual
+    nmcli connection up <conn-name>
 
 Once the network has been initialized, the settings can be made persistent
 by the command:
