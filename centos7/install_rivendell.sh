@@ -26,7 +26,7 @@ systemctl set-default graphical.target
 #
 # Install Dependencies
 #
-yum -y install patch evince  samba qt3-config polymer paravelview mariadb-server ntp emacs twolame libmad
+yum -y install patch evince telnet lwmon nc samba qt3-config polymer paravelview mariadb-server ntp emacs twolame libmad
 systemctl start mariadb
 systemctl enable mariadb
 
@@ -34,6 +34,7 @@ systemctl enable mariadb
 # Install Rivendell
 #
 patch /etc/selinux/config /usr/share/rivendell-install/disable-selinux.patch
+systemctl disable firewalld
 cp /usr/share/rivendell-install/asound.conf /etc/
 cp /usr/share/rivendell-install/*.repo /etc/yum.repos.d/
 cp /usr/share/rivendell-install/RPM-GPG-KEY* /etc/pki/rpm-gpg/

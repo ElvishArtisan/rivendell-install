@@ -10,3 +10,7 @@
 	* Get installer working for RHEL 7.
 2016-06-28 Fred Gleason <fredg@paravelsystems.com>
 	* Updated network configuration instructions in 'INSTALL'.
+2016-06-28 Fred Gleason <fredg@paravelsystems.com>
+	* Disabled the firewalld service in 'centos7/install_rivendell.sh'.
+	* Added 'telnet', 'lwmon' and 'nc' packages in
+	'centos7/install_rivendell.sh'.
