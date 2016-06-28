@@ -63,7 +63,6 @@ yum -y install rivendell
 echo
 echo "Installation of Rivendell is complete.  Reboot now."
 echo
-echo "IMPORTANT: Be sure to see \"First Steps\" after reboot is complete"
-echo "           for important information on securing your new Rivendell"
-echo "           system!"
+echo "IMPORTANT: Be sure to see the FINISHING UP section in the instructions"
+echo "           to ensure that your new Rivendell system is properly secured."
 echo

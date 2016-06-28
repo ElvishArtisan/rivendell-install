@@ -92,8 +92,15 @@ FINISHING UP
 ------------
 After the installation has been completed and the system rebooted, the
 system will come back in GUI mode, automatically logged in as user 'rd'.
-To secure the system fully, set the password for the local 'rd' account
-with the following command (as root):
+To secure the system fully, perform the following steps:
+
+1) Set the password for the local 'rd' account with the following
+   command (as root):
 
      passwd rd
 
+2) Set the MariaDB administrator password with the following command
+   (substitute your password for <pwd> and the name of the system for <host>):
+
+     echo "SET PASSWORD FOR root@<host> = PASSWORD('letmein');" | mysql -u root
+     echo "SET PASSWORD FOR root@localhost = PASSWORD('<pwd>');" | mysql -u root

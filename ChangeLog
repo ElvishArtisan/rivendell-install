@@ -14,3 +14,5 @@
 	* Disabled the firewalld service in 'centos7/install_rivendell.sh'.
 	* Added 'telnet', 'lwmon' and 'nc' packages in
 	'centos7/install_rivendell.sh'.
+2016-06-28 Fred Gleason <fredg@paravelsystems.com>
+	* Added a 'FINISHING UP' section to 'INSTALL'.
