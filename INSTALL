@@ -102,5 +102,5 @@ To secure the system fully, perform the following steps:
 2) Set the MariaDB administrator password with the following command
    (substitute your password for <pwd> and the name of the system for <host>):
 
-     echo "SET PASSWORD FOR root@<host> = PASSWORD('letmein');" | mysql -u root
+     echo "SET PASSWORD FOR root@<host> = PASSWORD('<pwd>');" | mysql -u root
      echo "SET PASSWORD FOR root@localhost = PASSWORD('<pwd>');" | mysql -u root
