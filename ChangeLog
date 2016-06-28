@@ -16,3 +16,5 @@
 	'centos7/install_rivendell.sh'.
 2016-06-28 Fred Gleason <fredg@paravelsystems.com>
 	* Added a 'FINISHING UP' section to 'INSTALL'.
+2016-06-28 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.6.0.
