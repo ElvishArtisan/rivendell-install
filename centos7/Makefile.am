@@ -21,7 +21,8 @@
 
 
 EXTRA_DIST = asound.conf\
-             install_rivendell.sh
+             install_rivendell.sh\
+             install_rivendell_devel.sh
 
 CLEANFILES = *~
 

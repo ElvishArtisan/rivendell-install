@@ -49,6 +49,7 @@ Bootstrap script for installing Rivendell on an RHEL system.
 rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT/root
 cp centos7/install_rivendell.sh $RPM_BUILD_ROOT/root/
+cp centos7/install_rivendell_devel.sh $RPM_BUILD_ROOT/root/
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/rivendell-install
 cp centos7/asound.conf $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
@@ -60,6 +61,7 @@ cp common/*.png $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/smb.conf $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/qt_plugins_3.3rc $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/qtrc $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
+cp common/docbook5.sh $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/rivendell-install/skel
 cp common/skel/*.pdf $RPM_BUILD_ROOT%{_datadir}/rivendell-install/skel/
@@ -72,6 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root)
 /root/install_rivendell.sh
+/root/install_rivendell_devel.sh
 %{_datadir}/rivendell-install/*
 
 

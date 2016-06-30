@@ -24,6 +24,7 @@ SUBDIRS = skel
 EXTRA_DIST = adobe-linux-x86_64.repo\
              autologin.patch\
              disable-selinux.patch\
+             docbook5.sh\
              qt_plugins_3.3rc\
              qtrc\
              rdairplay_skin.png\

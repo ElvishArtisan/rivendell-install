@@ -20,3 +20,5 @@
 	* Incremented the package version to 0.6.0.
 2016-06-30 Fred Gleason <fredg@paravelsystems.com>
 	* Added step 3) to the FINISHING UP section in 'INSTALL'.
+2016-06-30 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'install_rivendell_devel.sh'.
