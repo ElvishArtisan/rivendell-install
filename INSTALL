@@ -104,3 +104,7 @@ To secure the system fully, perform the following steps:
 
      echo "SET PASSWORD FOR root@<host> = PASSWORD('<pwd>');" | mysql -u root
      echo "SET PASSWORD FOR root@localhost = PASSWORD('<pwd>');" | mysql -u root
+
+3) Remove the Rivendell installer script with the following command (as root):
+
+     yum -y remove rivendell-install
