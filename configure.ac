@@ -31,15 +31,12 @@ AC_CONFIG_MACRO_DIR([m4])
 #
 AR_GET_DISTRO()
 AC_SUBST(DISTRO,$ar_gcc_distro)
-#if test $ar_gcc_distro = suse ; then
-#else
-#  if test $ar_distro_major -ge 7 ; then
-#  else
-#    if test $ar_distro_major -ge 6 ; then
-#    else
-#    fi
-#  fi
-#fi
+if test $ar_distro_major -eq 7 ; then
+  ln -s rivendell-install-rhel7.spec rivendell-install.spec
+fi
+if test $ar_distro_major -eq 6 ; then
+  ln -s rivendell-install-rhel6.spec rivendell-install.spec
+fi
 
 #
 # Configure RPM Build
@@ -58,10 +55,11 @@ fi
 AC_SUBST(RPM_DATESTAMP,`date +%a\ %b\ %d\ %Y`)
 
 AC_CONFIG_FILES([ \
+    centos6/Makefile \
     centos7/Makefile \
     common/Makefile \
-    common/skel/Makefile \
-    rivendell-install.spec \
+    rivendell-install-rhel6.spec \
+    rivendell-install-rhel7.spec \
     Makefile ])
 AC_OUTPUT()
 

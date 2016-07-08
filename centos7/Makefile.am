@@ -20,9 +20,11 @@
 ## Use automake to process this into a Makefile.in
 
 
-EXTRA_DIST = asound.conf\
+EXTRA_DIST = disable-selinux.patch\
              install_rivendell.sh\
-             install_rivendell_devel.sh
+             install_rivendell_devel.sh\
+             qt_plugins_3.3rc\
+             qtrc
 
 CLEANFILES = *~
 

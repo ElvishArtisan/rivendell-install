@@ -20,7 +20,8 @@
 ##   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 ##
 
-SUBDIRS = centos7\
+SUBDIRS = centos6\
+          centos7\
           common
 
 ACLOCAL_AMFLAGS = -I m4
@@ -39,7 +40,11 @@ rpm:	dist
 EXTRA_DIST = autogen.sh\
              get_distro.pl\
              get_target.sh\
-             PACKAGE_VERSION
+             INSTALL-RHEL6\
+             INSTALL-RHEL7\
+             PACKAGE_VERSION\
+             rivendell-install-rhel6.spec.in\
+             rivendell-install-rhel7.spec.in
 
 CLEANFILES = *~\
              *.mo\

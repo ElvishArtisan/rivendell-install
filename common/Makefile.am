@@ -19,17 +19,14 @@
 ##
 ## Use automake to process this into a Makefile.in
 
-SUBDIRS = skel
-
 EXTRA_DIST = adobe-linux-x86_64.repo\
+             asound.conf\
              autologin.patch\
-             disable-selinux.patch\
              docbook5.sh\
-             qt_plugins_3.3rc\
-             qtrc\
              rdairplay_skin.png\
              rdpanel_skin.png\
              Reyware.repo\
+             rog-1.3.3.pdf\
              RPM-GPG-KEY-adobe-linux\
              RPM-GPG-KEY-Reyware\
              smb.conf

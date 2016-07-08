@@ -1,6 +1,6 @@
 ## automake.am
 ##
-## common/skel/Makefile.am for the rivendell-install package.
+## centos6/Makefile.am for the rivendell-install package.
 ##
 ##   (C) Copyright 2016 Fred Gleason <fredg@paravelsystems.com>
 ##
@@ -19,7 +19,11 @@
 ##
 ## Use automake to process this into a Makefile.in
 
-EXTRA_DIST = rog-1.3.3.pdf
+
+EXTRA_DIST = disable-selinux.patch\
+             install_rivendell.sh\
+             qt_plugins_3.3rc\
+             qtrc
 
 CLEANFILES = *~
 

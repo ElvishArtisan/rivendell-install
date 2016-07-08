@@ -1,0 +1,74 @@
+This is the 'INSTALL' file for the rivendell-install package.  It provides
+detailed, step-by-step instructions for installing Rivendell on RHEL 6.x
+systems.
+
+Please see the 'README' file for an overview and basic rationale for
+this package.
+
+INSTALL BASE DISTRIBUTION
+-------------------------
+
+RHEL 6
+------
+The base distribution should be installed in 'Minimal Desktop' mode, which will
+result in a basic Gnome 2 desktop environment after the initial
+reboot.  Be sure to create an 'rd' user during the install to run
+applications.  After logging in as that user, networking can be initialized by
+right-clicking on the networking icon in the upper right-hand corner of
+the screen and selecting 'Edit Connections'.
+
+Once Internet access is functioning, update the entire installation with
+the command:
+
+    yum -y update
+
+Next, reboot the command:
+
+    reboot
+
+The system is now ready to have Rivendell installed.
+
+
+BOOTSTRAP INSTALLATION SCRIPT
+-----------------------------
+Log back in as user 'rd' and open a Terminal window (under
+Applications->System Tools).  Enter the following command to get 'root'
+permissions:
+
+    su -
+
+The system will prompt for a password.  Enter the root password that was
+set during system installation (it is normal for the entered password not
+to show up as you enter it).
+
+Now enter the following commands:
+
+    wget http://download.paravelsystems.com/CentOS/6/Paravel-Broadcast.repo -P /etc/yum.repos.d/
+
+    wget http://download.paravelsystems.com/CentOS/6/RPM-GPG-KEY-Paravel-Broadcast -P /etc/pki/rpm-gpg
+
+    yum -y install rivendell-install
+
+Then, start the installation with the command:
+
+    ./install_rivendell.sh
+
+Depending upon the speed of the Internet connection, installation can take
+between several minutes to an hour or more.
+
+
+FINISHING UP
+------------
+After the installation has been completed and the system rebooted, the
+system will come back in GUI mode, automatically logged in as user 'rd'.
+To secure the system fully, perform the following steps:
+
+1) Set the MySQL administrator password with the following command
+   (substitute your password for <pwd> and the name of the system for <host>):
+
+#     echo "SET PASSWORD FOR root@<host> = PASSWORD('<pwd>');" | mysql -u root
+#     echo "SET PASSWORD FOR root@localhost = PASSWORD('<pwd>');" | mysql -u root
+
+2) Remove the Rivendell installer script with the following command (as root):
+
+     yum -y remove rivendell-install
