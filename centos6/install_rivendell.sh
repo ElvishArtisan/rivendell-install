@@ -60,6 +60,9 @@ mkdir -p /home/rd/traffic_import
 mkdir -p /home/rd/Desktop
 cp /usr/share/rivendell-install/skel/rog-1.3.3.pdf /home/rd/Desktop/Rivendell\ Ops\ Guide.pdf
 cp /usr/share/rivendell-install/skel/paravel_support.pdf /home/rd/Desktop/First\ Steps.pdf
+mkdir -p /home/rd/.qt
+cp /usr/share/rivendell-install/qt_plugins_3.3rc /home/rd/.qt/
+cp /usr/share/rivendell-install/qtrc /home/rd/.qt/
 chown -R rd:rd /home/rd
 patch /etc/gdm/custom.conf /usr/share/rivendell-install/autologin.patch
 yum -y install rivendell

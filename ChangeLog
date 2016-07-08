@@ -41,3 +41,4 @@
 	* Added 'common/no_screen_blank.conf' and
 	'common/paravel_support.pdf'.
 	* Tweaked install on RHEL 6.
+	* Added 'centos6/install_rivendell_devel.sh'.
