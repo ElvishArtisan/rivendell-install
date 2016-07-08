@@ -13,7 +13,6 @@ REPO_HOSTNAME="download.paravelsystems.com"
 #
 # Configure Repos
 #
-#yum -y install epel-release
 wget http://$REPO_HOSTNAME/CentOS/6com/Paravel-Commercial.repo -P /etc/yum.repos.d/
 
 #
@@ -24,29 +23,44 @@ service mysqld start
 chkconfig mysqld on
 
 #
+# Ensure that user 'rd' exists
+#
+getent passwd rd > /dev/null
+if [ $? -ne 0 ]; then
+    adduser -c Rivendell\ Audio --groups audio rd
+fi
+
+#
 # Install Rivendell
 #
 patch /etc/selinux/config /usr/share/rivendell-install/disable-selinux.patch
 iptables -F
 iptables -F -t nat
 service iptables save
-cp -n /usr/share/rivendell-install/asound.conf /etc/
-cp -n /usr/share/rivendell-install/*.repo /etc/yum.repos.d/
-cp -n /usr/share/rivendell-install/RPM-GPG-KEY* /etc/pki/rpm-gpg/
+rm -f /etc/asound.conf
+cp /usr/share/rivendell-install/asound.conf /etc/
+cp /usr/share/rivendell-install/*.repo /etc/yum.repos.d/
+cp /usr/share/rivendell-install/RPM-GPG-KEY* /etc/pki/rpm-gpg/
 mkdir -p /usr/share/pixmaps/rivendell
-cp -n /usr/share/rivendell-install/rdairplay_skin.png /usr/share/pixmaps/rivendell/
-cp -n /usr/share/rivendell-install/rdpanel_skin.png /usr/share/pixmaps/rivendell/
-cp -n /usr/share/rivendell-install/smb.conf /etc/samba/
+cp /usr/share/rivendell-install/rdairplay_skin.png /usr/share/pixmaps/rivendell/
+cp /usr/share/rivendell-install/rdpanel_skin.png /usr/share/pixmaps/rivendell/
+cp /usr/share/rivendell-install/smb.conf /etc/samba/
+cp /usr/share/rivendell-install/no_screen_blank.conf /etc/X11/xorg.conf.d/
 mkdir -p /etc/skel/Desktop
-cp -n /usr/share/rivendell-install/skel/rog-1.3.3.pdf /etc/skel/Desktop/Rivendell\ Ops\ Guide.pdf
-mkdir -p /etc/skel/rd_xfer
-mkdir -p /etc/skel/music_export
-mkdir -p /etc/skel/music_import
-mkdir -p /etc/skel/traffic_export
-mkdir -p /etc/skel/traffic_import
+cp /usr/share/rivendell-install/skel/rog-1.3.3.pdf /etc/skel/Desktop/Rivendell\ Ops\ Guide.pdf
+cp /usr/share/rivendell-install/skel/paravel_support.pdf /etc/skel/Desktop/First\ Steps.pdf
 mkdir -p /etc/skel/.qt
 cp /usr/share/rivendell-install/qt_plugins_3.3rc /etc/skel/.qt/
 cp /usr/share/rivendell-install/qtrc /etc/skel/.qt/
+mkdir -p /home/rd/rd_xfer
+mkdir -p /home/rd/music_export
+mkdir -p /home/rd/music_import
+mkdir -p /home/rd/traffic_export
+mkdir -p /home/rd/traffic_import
+mkdir -p /home/rd/Desktop
+cp /usr/share/rivendell-install/skel/rog-1.3.3.pdf /home/rd/Desktop/Rivendell\ Ops\ Guide.pdf
+cp /usr/share/rivendell-install/skel/paravel_support.pdf /home/rd/Desktop/First\ Steps.pdf
+chown -R rd:rd /home/rd
 patch /etc/gdm/custom.conf /usr/share/rivendell-install/autologin.patch
 yum -y install rivendell
 

@@ -42,6 +42,7 @@ mkdir -p /usr/share/pixmaps/rivendell
 cp /usr/share/rivendell-install/rdairplay_skin.png /usr/share/pixmaps/rivendell/
 cp /usr/share/rivendell-install/rdpanel_skin.png /usr/share/pixmaps/rivendell/
 cp /usr/share/rivendell-install/smb.conf /etc/samba/
+cp /usr/share/rivendell-install/no_screen_blank.conf /etc/X11/xorg.conf.d/
 mkdir -p /etc/skel/Desktop
 cp /usr/share/rivendell-install/skel/rog-1.3.3.pdf /etc/skel/Desktop/Rivendell\ Ops\ Guide.pdf
 mkdir -p /etc/skel/rd_xfer

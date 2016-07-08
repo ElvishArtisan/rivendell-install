@@ -37,3 +37,7 @@
 	* Moved 'common/skel/rog-1.3.3.pdf' to 'common/rog-1.3.3.pdf'.
 	* Moved 'rivendell-install.spec.in' to
 	'rivendell-install-rhel7.spec.in'.
+2016-07-08 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'common/no_screen_blank.conf' and
+	'common/paravel_support.pdf'.
+	* Tweaked install on RHEL 6.

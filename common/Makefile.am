@@ -23,6 +23,8 @@ EXTRA_DIST = adobe-linux-x86_64.repo\
              asound.conf\
              autologin.patch\
              docbook5.sh\
+             no_screen_blank.conf\
+             paravel_support.pdf\
              rdairplay_skin.png\
              rdpanel_skin.png\
              Reyware.repo\
