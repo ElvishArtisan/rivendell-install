@@ -42,3 +42,5 @@
 	'common/paravel_support.pdf'.
 	* Tweaked install on RHEL 6.
 	* Added 'centos6/install_rivendell_devel.sh'.
+2016-07-08 Fred Gleason <fredg@paravelsystems.com>
+	* Tweaked install on RHEL 7.
