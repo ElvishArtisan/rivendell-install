@@ -35,6 +35,8 @@ systemctl enable mariadb
 #
 patch /etc/selinux/config /usr/share/rivendell-install/disable-selinux.patch
 systemctl disable firewalld
+systemctl start ntpd
+systemctl enable ntpd
 rm -f /etc/asound.conf
 cp /usr/share/rivendell-install/asound.conf /etc/
 cp /usr/share/rivendell-install/*.repo /etc/yum.repos.d/

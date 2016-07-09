@@ -44,3 +44,6 @@
 	* Added 'centos6/install_rivendell_devel.sh'.
 2016-07-08 Fred Gleason <fredg@paravelsystems.com>
 	* Tweaked install on RHEL 7.
+2016-07-08 Fred Gleason <fredg@paravelsystems.com>
+	* Enabled startup of the ntpd service in
+	'centos7/install_rivendell.sh'.
