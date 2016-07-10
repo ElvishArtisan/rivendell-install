@@ -53,3 +53,5 @@
 2016-07-09 Fred Gleason <fredg@paravelsystems.com>
 	* Removed 'INSTALL-RHEL6'.
 	* Removed 'INSTALL-RHEL7'.
+2016-07-09 Fred Gleason <fredg@paravelsystems.com>
+	* Added a 'make web' target.

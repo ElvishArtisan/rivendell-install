@@ -74,6 +74,7 @@ AC_CONFIG_FILES([ \
     docs/Makefile \
     rivendell-install-rhel6.spec \
     rivendell-install-rhel7.spec \
+    rivendell-install-web.spec \
     Makefile ])
 AC_OUTPUT()
 
