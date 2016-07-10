@@ -45,8 +45,6 @@ rpm:	dist
 EXTRA_DIST = autogen.sh\
              get_distro.pl\
              get_target.sh\
-             INSTALL-RHEL6\
-             INSTALL-RHEL7\
              PACKAGE_VERSION\
              rivendell-install-rhel6.spec.in\
              rivendell-install-rhel7.spec.in

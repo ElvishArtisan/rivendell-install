@@ -50,3 +50,6 @@
 2016-07-09 Fred Gleason <fredg@paravelsystems.com>
 	* Added 'docs/rivendell-install-rhel6.xml'.
 	* Added 'docs/rivendell-install-rhel7.xml'.
+2016-07-09 Fred Gleason <fredg@paravelsystems.com>
+	* Removed 'INSTALL-RHEL6'.
+	* Removed 'INSTALL-RHEL7'.

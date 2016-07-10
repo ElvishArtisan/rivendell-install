@@ -14,8 +14,5 @@ primary steps:
 3) Reboot and finish up final details.
 
 The specific installation steps vary somewhat depending upon which major
-RHEL version is being used.  See the following for detailed, step-by-step
-instructions:
-
-RHEL 6.x -- INSTALL-RHEL6
-RHEL 7.x -- INSTALL-RHEL7
+RHEL version is being used.  See the documentation in 'docs/' for detailed
+steps for each.
