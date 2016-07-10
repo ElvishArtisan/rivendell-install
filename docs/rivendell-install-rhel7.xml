@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<article xmlns="http://docbook.org/ns/docbook" version="5.0">
+<info>
+  <title>Installing Rivendell on an RHEL-7 System</title>
+  <author>
+    <personname>
+      <firstname>Fred</firstname>
+      <surname>Gleason</surname>
+      <email>fredg@paravelsystems.com</email>
+    </personname>
+  </author>
+</info>
+
+<sect1>
+  <title>Introduction</title>
+  <sect2>
+    <title>Overview</title>
+    <para>
+      This technical note contains procedures for installing the
+      Rivendell Radio Automation System on a system running RHEL 7.x derived
+      distributions. Such distributions include:
+    </para>
+    <itemizedlist>
+      <listitem>
+	<para>
+	  Community Enterprise OS (CentOS) 7.x
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  RedHat Enterprise Linux 7.x
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  Scientific Linux 7.x
+	</para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      Installing Rivendell on these platforms consists of three primary steps:
+    </para>
+    <orderedlist>
+      <listitem>
+	<para>
+	  Install the base distribution and establish an Internet connection.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  Bootstrap and run the installation script.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  Secure accounts and finish up final details.
+	</para>
+      </listitem>
+    </orderedlist>
+  </sect2>
+  <sect2>
+    <title>Prerequisites</title>
+    <para>
+      The following items are required to complete the installation.
+    </para>
+    <itemizedlist>
+      <listitem>
+	<para>
+	  Target hardware.  64 bit (x86_64) AMD or Intel architecture
+	  is supported.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  A generic installer image for the distribution.  DVD, Network
+	  and USB installation sources are all supported.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  A working Internet connection.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  A basic working knowledge of how to install vanilla RHEL 7.x.
+	  Consult the documentation of the particular distribution for
+	  more information.
+	</para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+</sect1>
+
+<sect1>
+  <title>Installing the Base Distribution</title>
+  <para>
+    Install the base distribution in 'Minimal' mode.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="rhel7-minimal-mode.png" scale="50"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    Set the <userinput>root</userinput> password, but do not create any
+    other users.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="rhel7-set-root-password.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    When basic installation is complete and after rebooting, log in as
+    user <userinput>root</userinput>.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="rhel7-root-login.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    Then run the command:
+  </para>
+  <para>
+     <userinput>nmcli conn show</userinput>
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="rhel7-show-connections.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    This will print a list of available network connections,
+    looking something like:
+  </para>
+  <para>
+    <literallayout class="monospaced">
+  NAME  UUID                                  TYPE            DEVICE
+  eth0  96e879a9-887d-405b-a340-cab85fcc8c15  802-3-ethernet  --
+    </literallayout>
+  </para>
+  <para>
+    To autoconfigure a connection via DHCP and bring it up, run
+    the following commands:
+  </para>
+  <para>
+    <userinput>nmcli conn mod <replaceable>name</replaceable> ipv4.method auto</userinput>
+  </para>
+  <para>
+    <userinput>nmcli conn up <replaceable>name</replaceable></userinput>
+  </para>
+  <para>
+    Where <userinput><replaceable>name</replaceable></userinput> is the
+    name of the connection to use, from the list above --.e.g.
+    <userinput>eth0</userinput>.
+  </para>
+  <para>
+    To start a given interface and assign IP parameters manually, give the
+    following commands:
+  </para>
+  <para>
+    <userinput>nmcli con mod <replaceable>name</replaceable> ipv4.addresses <replaceable>ip-addr</replaceable>/<replaceable>prefix</replaceable>
+      ipv4.gateway <replaceable>gateway-addr</replaceable> ipv4.dns
+      "<replaceable>dns1-addr</replaceable> <replaceable>dns2-addr</replaceable>"</userinput>
+  </para>
+  <para>
+      <userinput>nmcli conn mod <replaceable>name</replaceable> ipv4.method manual</userinput>
+  </para>
+  <para>
+      <userinput>nmcli connection up <replaceable>name</replaceable></userinput>
+  </para>
+  <para>
+    Where <userinput><replaceable>ip-addr</replaceable></userinput> is the
+    IP address to use,
+    <userinput><replaceable>prefix</replaceable></userinput> is the netmask
+    prefix,
+    <userinput><replaceable>gateway-ip</replaceable></userinput> is the gateway
+    IP address and
+    <userinput><replaceable>dnsX-addr</replaceable></userinput> are the DNS
+    server address(es). (If you are used to specifying a netmask in the more
+    common 'dotted.quad' notation, a 'cheat sheet' that provides prefix
+    values for the most common values is available at
+    <ulink url="https://www.aelius.com/njh/subnet_sheet.html">
+      https://www.aelius.com/njh/subnet_sheet.html</ulink>).
+  </para>
+  <para>
+    Once the network has been initialized, the settings can be made persistent
+    by the command:
+  </para>
+  <para>
+    <userinput>nmcli con mod <replaceable>name</replaceable> connection.autoconnect yes</userinput>
+  </para>
+
+  <para>
+    Now, set the hostname of system with the command:
+  </para>
+  <para>
+    <userinput>hostnamectl set-hostname <replaceable>hostname</replaceable></userinput>
+  </para>
+  <para>
+    <userinput><replaceable>hostname</replaceable></userinput> should be
+    all lower-case, alphanumeric and not more than 32 characters.
+  </para>
+  <para>
+    Once Internet access is functioning, update the entire installation with
+    the command:
+  </para>
+  <para>
+    <userinput>yum -y update</userinput>
+  </para>
+  <para>
+    Reboot when the update is complete with the command:
+  </para>
+  <para>
+    <userinput>reboot</userinput>
+  </para>
+  <para>
+    The system is now ready to have Rivendell installed.
+  </para>
+</sect1>
+
+<sect1>
+  <title>Running the Installation Script</title>
+  <para>
+    Log back in as user <userinput>root</userinput> and run the following
+    commands:
+  </para>
+  <para>
+    <userinput>yum -y install wget</userinput>
+  </para>
+  <para>
+    <userinput>wget
+    http://download.paravelsystems.com/CentOS/7/Paravel-Broadcast.repo
+    -P /etc/yum.repos.d/</userinput>
+  </para>
+  <para>
+    <userinput>wget 
+    http://download.paravelsystems.com/CentOS/7/RPM-GPG-KEY-Paravel-Broadcast
+    -P /etc/pki/rpm-gpg</userinput>
+  </para>
+  <para>
+    <userinput>yum -y install rivendell-install</userinput>
+  </para>
+  <para>
+    Then, start the installation with the command:
+  </para>
+  <para>
+    <userinput>./install_rivendell.sh</userinput>
+  </para>
+  <para>
+    Depending upon the speed of the Internet connection, installation can take
+    between several minutes to an hour or more.  When installation is
+    complete, reboot the system with the command:
+  </para>
+  <para>
+    <userinput>reboot</userinput>
+  </para>
+</sect1>
+
+<sect1>
+  <title>Final Details</title>
+  <para>
+    After rebooting, the system will come back in GUI mode, automatically
+    logged in as user <userinput>rd</userinput>.  To secure the system fully,
+    perform the following steps:
+  </para>
+  <orderedlist>
+    <listitem>
+      <para>
+	Open a shell by clicking on the
+	<computeroutput>Applications</computeroutput> button in the upper
+	right-hand corner of the desktop, selecting the
+	<computeroutput>System</computeroutput> menu and clicking on the
+	<computeroutput>Xfce Terminal</computeroutput> item.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+	Enter the following command to get <userinput>root</userinput>
+	permissions:
+      </para>
+      <para>
+	<userinput>su -</userinput>
+      </para>
+      <para>
+	You will be prompted for a password. Enter the root password and
+	then press <userinput>Enter</userinput>. The password will not
+	be echoed to the screen as you enter it.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+	Set the password for the local <userinput>rd</userinput> account
+	with the following command:
+      </para>
+      <para>
+	<userinput>passwd rd</userinput>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+	Set the MariaDB administrator password with the following command
+	(substitute your password for <replaceable>pwd</replaceable> and the
+	name of the system for <replaceable>host</replaceable>):
+      </para>
+      <para>
+	<userinput>echo "SET PASSWORD FOR root@<replaceable>host</replaceable>
+	= PASSWORD('<replaceable>pwd</replaceable>');" |
+	mysql -u root</userinput>
+      </para>
+      <para>
+	<userinput>echo "SET PASSWORD FOR root@localhost = 
+	PASSWORD('<replaceable>pwd</replaceable>');" |
+	mysql -u root</userinput>
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+	Remove the Rivendell installer script with the following command:
+      </para>
+      <para>
+	<userinput>yum -y remove rivendell-install</userinput>
+      </para>
+    </listitem>
+  </orderedlist>
+  <para>
+    The system is now ready for service.
+  </para>
+</sect1>
+</article>

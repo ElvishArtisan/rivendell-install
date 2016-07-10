@@ -47,3 +47,6 @@
 2016-07-08 Fred Gleason <fredg@paravelsystems.com>
 	* Enabled startup of the ntpd service in
 	'centos7/install_rivendell.sh'.
+2016-07-09 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'docs/rivendell-install-rhel6.xml'.
+	* Added 'docs/rivendell-install-rhel7.xml'.

@@ -27,6 +27,11 @@ m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 AC_CONFIG_MACRO_DIR([m4])
 
 #
+# Option Switches
+#
+AC_ARG_ENABLE(docbook,[  --disable-docbook       disable building of documentation],[DOCBOOK_DISABLED=yes],[])
+
+#
 # Determine Distro
 #
 AR_GET_DISTRO()
@@ -37,6 +42,14 @@ fi
 if test $ar_distro_major -eq 6 ; then
   ln -s rivendell-install-rhel6.spec rivendell-install.spec
 fi
+
+#
+# Build DocBook Items?
+#
+if test -z $DOCBOOK_DISABLED ; then
+  USING_DOCBOOK=yes
+fi
+AM_CONDITIONAL([DOCBOOK_AM], [test "$USING_DOCBOOK" = yes])
 
 #
 # Configure RPM Build
@@ -58,6 +71,7 @@ AC_CONFIG_FILES([ \
     centos6/Makefile \
     centos7/Makefile \
     common/Makefile \
+    docs/Makefile \
     rivendell-install-rhel6.spec \
     rivendell-install-rhel7.spec \
     Makefile ])
