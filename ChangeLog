@@ -62,3 +62,8 @@
 	'centos7/install_rivendell_devel.sh'.
 	* Added 'kernel-devel' to the set of installed packages in
 	'centos6/install_rivendell_devel.sh'.
+2016-07-14 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'rpm-sign' to the set of installed packages in
+	'centos7/install_rivendell_devel.sh'.
+	* Added 'rpm-sign' to the set of installed packages in
+	'centos6/install_rivendell_devel.sh'.
