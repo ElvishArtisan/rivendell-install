@@ -26,7 +26,7 @@ systemctl set-default graphical.target
 #
 # Install Dependencies
 #
-yum -y install patch evince telnet lwmon nc samba qt3-config polymer paravelview mariadb-server ntp emacs twolame libmad
+yum -y install patch evince telnet lwmon nc samba qt3-config polymer paravelview mariadb-server ntp emacs twolame libmad nfs-utils cifs-utils
 systemctl start mariadb
 systemctl enable mariadb
 
