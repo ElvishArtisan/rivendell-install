@@ -72,3 +72,6 @@
 	'centos7/install_rivendell.sh'.
 	* Added 'nfs-utils' to the set of installed packages in
 	'centos7/install_rivendell.sh'.
+2016-07-15 Fred Gleason <fredg@paravelsystems.com>
+	* Removed 'rpm-sign' from the set of installed packages in
+	'centos6/install_rivendell_devel.sh'.

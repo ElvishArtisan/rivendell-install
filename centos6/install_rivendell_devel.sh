@@ -24,7 +24,7 @@
 #
 # Install Packages
 #
-yum -y install git gcc-c++ automake autoconf libtool qt-devel libcurl-devel cdparanoia-devel hpklinux-devel alsa-lib-devel jack-audio-connection-kit-devel libsamplerate-devel libsndfile-devel id3lib-devel libvorbis-devel flac-devel pam-devel soundtouch-devel twolame-devel libmad-devel rpm-build createrepo fop docbook5-style-xsl libxslt kernel-devel rpm-sign
+yum -y install git gcc-c++ automake autoconf libtool qt-devel libcurl-devel cdparanoia-devel hpklinux-devel alsa-lib-devel jack-audio-connection-kit-devel libsamplerate-devel libsndfile-devel id3lib-devel libvorbis-devel flac-devel pam-devel soundtouch-devel twolame-devel libmad-devel rpm-build createrepo fop docbook5-style-xsl libxslt kernel-devel
 
 #
 # Configure Environment
