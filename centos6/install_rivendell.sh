@@ -18,7 +18,7 @@ wget http://$REPO_HOSTNAME/CentOS/6com/Paravel-Commercial.repo -P /etc/yum.repos
 #
 # Install Dependencies
 #
-yum -y install evince telnet lwmon nc samba qt3-config polymer paravelview mysql-server emacs twolame libmad
+yum -y install evince telnet lwmon nc samba qt3-config polymer paravelview mysql-server emacs twolame libmad ssvnc
 service mysqld start
 chkconfig mysqld on
 
