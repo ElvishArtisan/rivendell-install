@@ -337,4 +337,57 @@
     The system is now ready for service.
   </para>
 </sect1>
+
+<sect1>
+  <title>Optional Steps</title>
+  <sect2>
+    <title>Enabling Samba</title>
+    <para>
+      If access to the system from one or more Windows systems is desired,
+      the <command>Samba</command> subsystem should be activated with the
+      following commands:
+    </para>
+    <para>
+      <userinput>systemctl start smb</userinput>
+    </para>
+    <para>
+      <userinput>systemctl enable smb</userinput>
+    </para>
+    <para>
+      <userinput>systemctl start nmb</userinput>
+    </para>
+    <para>
+      <userinput>systemctl enable nmb</userinput>
+    </para>
+    <para>
+      The following Windows shares will now be available:
+      <informaltable cellpadding="5" border="1">
+	<tr>
+	  <th>Share Name</th>
+	  <th>Local Path</th>
+	</tr>
+	<tr>
+	  <td>\\<replaceable>ip-addr</replaceable>\rd_xfer</td>
+	  <td>/home/rd/rd_xfer</td>
+	</tr>
+	<tr>
+	  <td>\\<replaceable>ip-addr</replaceable>\music_export</td>
+	  <td>/home/rd/music_export</td>
+	</tr>
+	<tr>
+	  <td>\\<replaceable>ip-addr</replaceable>\music_import</td>
+	  <td>/home/rd/music_import</td>
+	</tr>
+	<tr>
+	  <td>\\<replaceable>ip-addr</replaceable>\traffic_export</td>
+	  <td>/home/rd/traffic_export</td>
+	</tr>
+	<tr>
+	  <td>\\<replaceable>ip-addr</replaceable>\traffic_import</td>
+	  <td>/home/rd/traffic_import</td>
+	</tr>
+      </informaltable>
+    </para>
+  </sect2>
+</sect1>
 </article>

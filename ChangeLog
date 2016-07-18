@@ -80,3 +80,8 @@
 	'centos6/install_rivendell.sh'.
 	* Added 'ssvnc' to the set of installed packages in
 	'centos7/install_rivendell.sh'.
+2016-07-18 Fred Gleason <fredg@paravelsystems.com>
+	* Added an 'Enabling Samba' section in
+	'docs/rivendell-install-rhel6.xml'.
+	* Added an 'Enabling Samba' section in
+	'docs/rivendell-install-rhel7.xml'.
