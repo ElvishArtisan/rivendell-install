@@ -85,3 +85,6 @@
 	'docs/rivendell-install-rhel6.xml'.
 	* Added an 'Enabling Samba' section in
 	'docs/rivendell-install-rhel7.xml'.
+2016-07-18 Fred Gleason <fredg@paravelsystems.com>
+	* Changed name of the 'FINISHING UP' section to 'FINAL DETAILS'
+	in 'centos6/install_rivendel.sh' and 'centos7/install_rivendell.sh'.
