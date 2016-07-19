@@ -11,6 +11,40 @@
 REPO_HOSTNAME="download.paravelsystems.com"
 
 #
+# Get Target Mode
+#
+if test $1 ; then
+    case "$1" in
+	--client)
+	    MODE="client"
+	    ;;
+
+	--server)
+	    MODE="server"
+	    ;;
+
+	--standalone)
+	    MODE="standalone"
+	    ;;
+
+	*)
+	    echo "USAGE: ./install_rivendell.sh --client|--server|--standalone"
+	    exit 256
+            ;;
+    esac
+else
+    MODE="standalone"
+fi
+
+#
+# Get Server IP Address
+#
+if test $MODE = "client" ; then
+    echo -n "Enter IP address of Rivendell server: "
+    read IP_ADDR
+fi
+
+#
 # Configure Repos
 #
 yum -y install epel-release
@@ -26,9 +60,55 @@ systemctl set-default graphical.target
 #
 # Install Dependencies
 #
-yum -y install patch evince telnet lwmon nc samba qt3-config polymer paravelview mariadb-server ntp emacs twolame libmad nfs-utils cifs-utils samba-client ssvnc
-systemctl start mariadb
-systemctl enable mariadb
+yum -y install patch evince telnet lwmon nc samba qt3-config polymer paravelview ntp emacs twolame libmad nfs-utils cifs-utils samba-client ssvnc
+
+if test $MODE = "server" ; then
+    #
+    # Install MariaDB
+    #
+    yum -y install mariadb-server
+    systemctl start mariadb
+    systemctl enable mariadb
+
+    #
+    # Enable DB Access for all remote hosts
+    #
+    echo "CREATE USER 'rduser'@'%' IDENTIFIED BY 'letmein';" | mysql -u root
+    echo "GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES ON Rivendell.* TO 'rduser'@'%';" | mysql -u root
+
+    #
+    # Enable NFS Access for all remote hosts
+    #
+    echo "/var/snd *(rw,no_root_squash)" >> /etc/exports
+    echo "/home/rd/rd_xfer *(rw,no_root_squash)" >> /etc/exports
+    echo "/home/rd/music_export *(rw,no_root_squash)" >> /etc/exports
+    echo "/home/rd/music_import *(rw,no_root_squash)" >> /etc/exports
+    echo "/home/rd/traffic_export *(rw,no_root_squash)" >> /etc/exports
+    echo "/home/rd/traffic_import *(rw,no_root_squash)" >> /etc/exports
+    systemctl enable rpcbind
+    systemctl enable nfs-server
+
+    #
+    # Enable CIFS File Sharing
+    #
+    systemctl enable smb
+    systemctl enable nmb
+fi
+
+if test $MODE = "standalone" ; then
+    #
+    # Install MariaDB
+    #
+    yum -y install mariadb-server
+    systemctl start mariadb
+    systemctl enable mariadb
+
+    #
+    # Enable CIFS File Sharing
+    #
+    systemctl enable smb
+    systemctl enable nmb
+fi
 
 #
 # Install Rivendell
@@ -64,6 +144,25 @@ chmod 0755 /home/rd
 patch /etc/gdm/custom.conf /usr/share/rivendell-install/autologin.patch
 yum -y remove alsa-firmware alsa-firmware-tools
 yum -y install rivendell
+
+if test $MODE = "client" ; then
+    #
+    # Add Remote Mounts
+    #
+    echo "$IP_ADDR:/var/snd /var/snd nfs defaults 0 0" >> /etc/fstab
+    echo "$IP_ADDR:/home/rd/rd_xfer /home/rd/rd_xfer nfs defaults 0 0" >> /etc/fstab
+    echo "$IP_ADDR:/home/rd/music_export /home/rd/music_export nfs defaults 0 0" >> /etc/fstab
+    echo "$IP_ADDR:/home/rd/music_import /home/rd/music_import nfs defaults 0 0" >> /etc/fstab
+    echo "$IP_ADDR:/home/rd/traffic_export /home/rd/traffic_export nfs defaults 0 0" >> /etc/fstab
+    echo "$IP_ADDR:/home/rd/traffic_import /home/rd/traffic_import nfs defaults 0 0" >> /etc/fstab
+
+    #
+    # Configure Rivendell
+    #
+    cat /etc/rd.conf | sed s/localhost/$IP_ADDR/g > /etc/rd-temp.conf
+    rm -f /etc/rd.conf
+    mv /etc/rd-temp.conf /etc/rd.conf
+fi
 
 #
 # Finish Up

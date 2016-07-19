@@ -99,3 +99,7 @@
 	* Fixed typos in 'centos6/install_rivendell.sh' that broke
 	installation in '--server' mode.
 	* Implemented a '--client' mode in 'centos6/install_rivendell.sh'.
+2016-07-19 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed guest account configuration in 'centos7/smb.conf'.
+	* Fixed a bug in 'centos7/install_rivendell.sh' that caused NFS
+	services to fail to be enabled when installing in '--server' mode.

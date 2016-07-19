@@ -252,10 +252,29 @@
     <userinput>yum -y install rivendell-install</userinput>
   </para>
   <para>
-    Then, start the installation with the command:
+    Three different types of installation are available. For a stand-alone
+    setup (single, self-contained Rivendell system), start the script
+    with the command:
   </para>
   <para>
-    <userinput>./install_rivendell.sh</userinput>
+    <userinput>./install_rivendell.sh --standalone</userinput>
+  </para>
+  <para>
+    For a server setup (system capable of hosting Rivendell client machines
+    that share the server's database and audio store), start the script
+    with the command:
+  </para>
+  <para>
+    <userinput>./install_rivendell.sh --server</userinput>
+  </para>
+  <para>
+    For a pure client setup (one that uses a central server for the database
+    and audio store), first create a host entry for the new client in
+    RDAdmin on the server (RDAdmin->ManageHosts->Add), then start the
+    script with the command:
+  </para>
+  <para>
+    <userinput>./install_rivendell.sh --client</userinput>
   </para>
   <para>
     Depending upon the speed of the Internet connection, installation can take
