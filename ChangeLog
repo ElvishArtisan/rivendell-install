@@ -106,3 +106,6 @@
 2016-07-19 Fred Gleason <fredg@paravelsystems.com>
 	* Removed the 'Optional Actions' section from
 	'docs/rivendell-install-rhel7.xml'.
+2016-07-19 Fred Gleason <fredg@paravelsystems.com>
+	* Updated 'NEWS'.
+	* Incremented the package version to 0.7.1.

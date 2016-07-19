@@ -1,6 +1,14 @@
 The NEWS file for the rivendell-install package.
 
 -------------------------------------------------------------------------------
+v0.7.1 --  7/19/2016
+
+   Third BETA release.
+
+   Added '--server' and '--client' installation modes for both RHEL-6
+   and RHEL-7.
+
+-------------------------------------------------------------------------------
 v0.6.1 --  6/30/2016
 
    Second BETA release.
