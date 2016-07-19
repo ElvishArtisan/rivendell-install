@@ -28,9 +28,7 @@
 	xsltproc $(DOCBOOK_STYLESHEETS)/fo/docbook.xsl $< | fop - -pdf $@
 
 all-local:	rivendell-install-rhel6.html\
-                rivendell-install-rhel6.pdf\
-                rivendell-install-rhel7.html\
-                rivendell-install-rhel7.pdf
+                rivendell-install-rhel7.html
 
 EXTRA_DIST = rhel6-create-user.png\
              rhel6-edit-connections.png\
@@ -48,10 +46,8 @@ EXTRA_DIST = rhel6-create-user.png\
              rhel7-set-root-password.png\
              rhel7-show-connections.png\
              rivendell-install-rhel6.html\
-             rivendell-install-rhel6.pdf\
              rivendell-install-rhel6.xml\
              rivendell-install-rhel7.html\
-             rivendell-install-rhel7.pdf\
              rivendell-install-rhel7.xml
 
 CLEANFILES = *~

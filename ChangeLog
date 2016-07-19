@@ -93,3 +93,5 @@
 	'centos6/install_rivendell.sh'.
 	* Split 'common/smb.conf' into separate 'centos6/smb.conf' and
 	'centos7/smb.conf' versions.
+2016-07-19 Fred Gleason <fredg@paravelsystems.com>
+	* Disabled generation of PDF documentation in 'docs/Makefile.am'.
