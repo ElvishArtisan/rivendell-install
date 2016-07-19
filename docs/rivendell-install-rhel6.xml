@@ -262,10 +262,20 @@
     <userinput>yum -y install rivendell-install</userinput>
   </para>
   <para>
-    Then, start the installation with the command:
+    Three different types of installation are available. For a stand-alone
+    setup (single, self-contained Rivendell system), start the script
+    with the command:
   </para>
   <para>
-    <userinput>./install_rivendell.sh</userinput>
+    <userinput>./install_rivendell.sh --standalone</userinput>
+  </para>
+  <para>
+    For a server setup (system capable of hosting Rivendell client machines
+    that share the server's database and audio store), start the script
+    with the command:
+  </para>
+  <para>
+    <userinput>./install_rivendell.sh --server</userinput>
   </para>
   <para>
     Depending upon the speed of the system and your Internet connection,
@@ -317,58 +327,5 @@
   <para>
     The system is now ready for service.
   </para>
-</sect1>
-
-<sect1>
-  <title>Optional Steps</title>
-  <sect2>
-    <title>Enabling Samba</title>
-    <para>
-      If access to the system from one or more Windows systems is desired,
-      the <command>Samba</command> subsystem should be activated with the
-      following commands:
-    </para>
-    <para>
-      <userinput>service smb start</userinput>
-    </para>
-    <para>
-      <userinput>chkconfig smb on</userinput>
-    </para>
-    <para>
-      <userinput>service nmb start</userinput>
-    </para>
-    <para>
-      <userinput>chkconfig nmb on</userinput>
-    </para>
-    <para>
-      The following Windows shares will now be available:
-      <informaltable cellpadding="5" border="1">
-	<tr>
-	  <th>Share Name</th>
-	  <th>Local Path</th>
-	</tr>
-	<tr>
-	  <td>\\<replaceable>ip-addr</replaceable>\rd_xfer</td>
-	  <td>/home/rd/rd_xfer</td>
-	</tr>
-	<tr>
-	  <td>\\<replaceable>ip-addr</replaceable>\music_export</td>
-	  <td>/home/rd/music_export</td>
-	</tr>
-	<tr>
-	  <td>\\<replaceable>ip-addr</replaceable>\music_import</td>
-	  <td>/home/rd/music_import</td>
-	</tr>
-	<tr>
-	  <td>\\<replaceable>ip-addr</replaceable>\traffic_export</td>
-	  <td>/home/rd/traffic_export</td>
-	</tr>
-	<tr>
-	  <td>\\<replaceable>ip-addr</replaceable>\traffic_import</td>
-	  <td>/home/rd/traffic_import</td>
-	</tr>
-      </informaltable>
-    </para>
-  </sect2>
 </sect1>
 </article>

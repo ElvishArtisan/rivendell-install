@@ -21,10 +21,12 @@
 
 
 EXTRA_DIST = disable-selinux.patch\
+             enable_server.sh\
              install_rivendell.sh\
              install_rivendell_devel.sh\
              qt_plugins_3.3rc\
-             qtrc
+             qtrc\
+             smb.conf
 
 CLEANFILES = *~
 

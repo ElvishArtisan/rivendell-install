@@ -48,6 +48,7 @@ Bootstrap script for installing Rivendell on an RHEL 6 system.
 %install
 rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT/root
+cp centos6/enable_server.sh $RPM_BUILD_ROOT/root/
 cp centos6/install_rivendell.sh $RPM_BUILD_ROOT/root/
 cp centos6/install_rivendell_devel.sh $RPM_BUILD_ROOT/root/
 
@@ -55,12 +56,12 @@ mkdir -p $RPM_BUILD_ROOT%{_datadir}/rivendell-install
 cp centos6/disable-selinux.patch $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp centos6/qt_plugins_3.3rc $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp centos6/qtrc $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
+cp centos6/smb.conf $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/asound.conf $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/*.repo $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/RPM-GPG-KEY* $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/autologin.patch $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/*.png $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
-cp common/smb.conf $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/docbook5.sh $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/no_screen_blank.conf $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 
@@ -74,6 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
+/root/enable_server.sh
 /root/install_rivendell.sh
 /root/install_rivendell_devel.sh
 %{_datadir}/rivendell-install/*

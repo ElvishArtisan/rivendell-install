@@ -55,12 +55,12 @@ mkdir -p $RPM_BUILD_ROOT%{_datadir}/rivendell-install
 cp centos7/disable-selinux.patch $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp centos7/qt_plugins_3.3rc $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp centos7/qtrc $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
+cp centos7/smb.conf $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/asound.conf $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/*.repo $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/RPM-GPG-KEY* $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/autologin.patch $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/*.png $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
-cp common/smb.conf $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/docbook5.sh $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/no_screen_blank.conf $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 

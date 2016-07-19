@@ -30,8 +30,7 @@ EXTRA_DIST = adobe-linux-x86_64.repo\
              Reyware.repo\
              rog-1.3.3.pdf\
              RPM-GPG-KEY-adobe-linux\
-             RPM-GPG-KEY-Reyware\
-             smb.conf
+             RPM-GPG-KEY-Reyware
 
 CLEANFILES = *~
 

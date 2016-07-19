@@ -11,6 +11,32 @@
 REPO_HOSTNAME="download.paravelsystems.com"
 
 #
+# Get Target Mode
+#
+if test $1 ; then
+    case "$1" in
+	--client)
+	    MODE="client"
+	    ;;
+
+	--server)
+	    MODE="server"
+	    ;;
+
+	--standalone)
+	    MODE="standalone"
+	    ;;
+
+	*)
+	    echo "USAGE: ./install_rivendell.sh --client|--server|--standalone"
+	    exit 256
+            ;;
+    esac
+else
+    MODE="standalone"
+fi
+
+#
 # Configure Repos
 #
 wget http://$REPO_HOSTNAME/CentOS/6com/Paravel-Commercial.repo -P /etc/yum.repos.d/
@@ -18,9 +44,54 @@ wget http://$REPO_HOSTNAME/CentOS/6com/Paravel-Commercial.repo -P /etc/yum.repos
 #
 # Install Dependencies
 #
-yum -y install evince telnet lwmon nc samba qt3-config polymer paravelview mysql-server emacs twolame libmad ssvnc
-service mysqld start
-chkconfig mysqld on
+yum -y install evince telnet lwmon nc samba qt3-config polymer paravelview emacs twolame libmad ssvnc
+
+if test $MODE = "--server" ; then
+    #
+    # Install MySQL
+    #
+    yum -y install mysql-server
+    service mysqld start
+    chkconfig mysqld on
+
+    #
+    # Enable DB Access for all remote hosts
+    #
+    echo "CREATE USER 'rduser'@'%' IDENTIFIED BY 'letmein';" | mysql -u root
+    echo "GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES ON Rivendell.* TO 'rduser'@'%';" | mysql -u root
+
+    #
+    # Enable NFS Access for all remote hosts
+    #
+    echo "/var/snd *(rw,no_root_squash)" >> /etc/exports
+    echo "/home/rd/rd_xfer *(rw,no_root_squash)" >> /etc/exports
+    echo "/home/rd/music_export *(rw,no_root_squash)" >> /etc/exports
+    echo "/home/rd/music_import *(rw,no_root_squash)" >> /etc/exports
+    echo "/home/rd/traffic_export *(rw,no_root_squash)" >> /etc/exports
+    echo "/home/rd/traffic_import *(rw,no_root_squash)" >> /etc/exports
+    chkconfig nfs on
+
+    #
+    # Enable CIFS File Sharing
+    #
+    chkconfig smb on
+    chkconfig nmb on
+fi
+
+if test $MODE = "--standalone" ; then
+    #
+    # Install MySQL
+    #
+    yum -y install mysql-server
+    service mysqld start
+    chkconfig mysqld on
+
+    #
+    # Enable CIFS File Sharing
+    #
+    chkconfig smb on
+    chkconfig nmb on    
+fi
 
 #
 # Ensure that user 'rd' exists
@@ -44,6 +115,7 @@ cp /usr/share/rivendell-install/RPM-GPG-KEY* /etc/pki/rpm-gpg/
 mkdir -p /usr/share/pixmaps/rivendell
 cp /usr/share/rivendell-install/rdairplay_skin.png /usr/share/pixmaps/rivendell/
 cp /usr/share/rivendell-install/rdpanel_skin.png /usr/share/pixmaps/rivendell/
+mv /etc/samba/smb.conf /etc/samba/smb.conf-original
 cp /usr/share/rivendell-install/smb.conf /etc/samba/
 cp /usr/share/rivendell-install/no_screen_blank.conf /etc/X11/xorg.conf.d/
 mkdir -p /etc/skel/Desktop
@@ -64,6 +136,7 @@ mkdir -p /home/rd/.qt
 cp /usr/share/rivendell-install/qt_plugins_3.3rc /home/rd/.qt/
 cp /usr/share/rivendell-install/qtrc /home/rd/.qt/
 chown -R rd:rd /home/rd
+chmod 775 /home/rd
 patch /etc/gdm/custom.conf /usr/share/rivendell-install/autologin.patch
 yum -y install rivendell
 
