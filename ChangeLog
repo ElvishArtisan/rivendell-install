@@ -95,3 +95,7 @@
 	'centos7/smb.conf' versions.
 2016-07-19 Fred Gleason <fredg@paravelsystems.com>
 	* Disabled generation of PDF documentation in 'docs/Makefile.am'.
+2016-07-19 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed typos in 'centos6/install_rivendell.sh' that broke
+	installation in '--server' mode.
+	* Implemented a '--client' mode in 'centos6/install_rivendell.sh'.

@@ -37,6 +37,14 @@ else
 fi
 
 #
+# Get Server IP Address
+#
+if test $MODE = "client" ; then
+    echo -n "Enter IP address of Rivendell server: "
+    read IP_ADDR
+fi
+
+#
 # Configure Repos
 #
 wget http://$REPO_HOSTNAME/CentOS/6com/Paravel-Commercial.repo -P /etc/yum.repos.d/
@@ -46,7 +54,7 @@ wget http://$REPO_HOSTNAME/CentOS/6com/Paravel-Commercial.repo -P /etc/yum.repos
 #
 yum -y install evince telnet lwmon nc samba qt3-config polymer paravelview emacs twolame libmad ssvnc
 
-if test $MODE = "--server" ; then
+if test $MODE = "server" ; then
     #
     # Install MySQL
     #
@@ -78,7 +86,7 @@ if test $MODE = "--server" ; then
     chkconfig nmb on
 fi
 
-if test $MODE = "--standalone" ; then
+if test $MODE = "standalone" ; then
     #
     # Install MySQL
     #
@@ -139,6 +147,25 @@ chown -R rd:rd /home/rd
 chmod 775 /home/rd
 patch /etc/gdm/custom.conf /usr/share/rivendell-install/autologin.patch
 yum -y install rivendell
+
+if test $MODE = "client" ; then
+    #
+    # Add Remote Mounts
+    #
+    echo "$IP_ADDR:/var/snd /var/snd nfs defaults 0 0" >> /etc/fstab
+    echo "$IP_ADDR:/home/rd/rd_xfer /home/rd/rd_xfer nfs defaults 0 0" >> /etc/fstab
+    echo "$IP_ADDR:/home/rd/music_export /home/rd/music_export nfs defaults 0 0" >> /etc/fstab
+    echo "$IP_ADDR:/home/rd/music_import /home/rd/music_import nfs defaults 0 0" >> /etc/fstab
+    echo "$IP_ADDR:/home/rd/traffic_export /home/rd/traffic_export nfs defaults 0 0" >> /etc/fstab
+    echo "$IP_ADDR:/home/rd/traffic_import /home/rd/traffic_import nfs defaults 0 0" >> /etc/fstab
+
+    #
+    # Configure Rivendell
+    #
+    cat /etc/rd.conf | sed s/localhost/$IP_ADDR/g > /etc/rd-temp.conf
+    rm -f /etc/rd.conf
+    mv /etc/rd-temp.conf /etc/rd.conf
+fi
 
 #
 # Finish Up
