@@ -103,3 +103,6 @@
 	* Fixed guest account configuration in 'centos7/smb.conf'.
 	* Fixed a bug in 'centos7/install_rivendell.sh' that caused NFS
 	services to fail to be enabled when installing in '--server' mode.
+2016-07-19 Fred Gleason <fredg@paravelsystems.com>
+	* Removed the 'Optional Actions' section from
+	'docs/rivendell-install-rhel7.xml'.
