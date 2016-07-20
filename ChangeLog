@@ -109,3 +109,8 @@
 2016-07-19 Fred Gleason <fredg@paravelsystems.com>
 	* Updated 'NEWS'.
 	* Incremented the package version to 0.7.1.
+2016-07-20 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'man-pages' to the set of installed packages in
+	'centos7/install_rivendell_devel.sh'.
+	* Added 'man-pages' to the set of installed packages in
+	'centos6/install_rivendell_devel.sh'.
