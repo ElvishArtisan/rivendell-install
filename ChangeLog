@@ -117,3 +117,6 @@
 2016-07-21 Fred Gleason <fredg@paravelsystems.com>
 	* Added 'xfce4-screenshooter' and 'net-tools' packages to the set
 	of installed packages in 'centos7/install_rivendell_devel.sh'.
+2016-07-21 Fred Gleason <fredg@paravelsystems.com>
+	* Added the 'alsa-utils' package to the set
+	of installed packages in 'centos7/install_rivendell_devel.sh'.
