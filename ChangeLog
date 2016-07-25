@@ -120,3 +120,6 @@
 2016-07-22 Fred Gleason <fredg@paravelsystems.com>
 	* Added the 'alsa-utils' package to the set
 	of installed packages in 'centos7/install_rivendell_devel.sh'.
+2016-07-25 Fred Gleason <fredg@paravelsystems.com>
+	* Added the 'cups' package to the set
+	of installed packages in 'centos7/install_rivendell.sh'.
