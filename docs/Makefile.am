@@ -42,9 +42,11 @@ EXTRA_DIST = rhel6-create-user.png\
              rhel6-start-terminal.png\
              rhel6-start-update.png\
              rhel7-minimal-mode.png\
+             rhel7-nmtui-activate-menu.png\
+             rhel7-nmtui-invocation.png\
+             rhel7-nmtui-mainscreen.png\
              rhel7-root-login.png\
              rhel7-set-root-password.png\
-             rhel7-show-connections.png\
              rivendell-install-rhel6.html\
              rivendell-install-rhel6.xml\
              rivendell-install-rhel7.html\

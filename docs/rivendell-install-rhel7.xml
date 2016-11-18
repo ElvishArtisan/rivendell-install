@@ -130,75 +130,44 @@
     Then run the command:
   </para>
   <para>
-     <userinput>nmcli conn show</userinput>
+     <userinput>nmtui</userinput>
   </para>
   <para>
     <mediaobject>
       <imageobject>
-	<imagedata fileref="rhel7-show-connections.png" scale="90"/>
+	<imagedata fileref="rhel7-nmtui-invocation.png" scale="90"/>
       </imageobject>
     </mediaobject>
   </para>
   <para>
-    This will print a list of available network connections,
-    looking something like:
+    This will start up the NetworkManager utility.
   </para>
   <para>
-    <literallayout class="monospaced">
-  NAME  UUID                                  TYPE            DEVICE
-  eth0  96e879a9-887d-405b-a340-cab85fcc8c15  802-3-ethernet  --
-    </literallayout>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="rhel7-nmtui-mainscreen.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
   </para>
   <para>
-    To autoconfigure a connection via DHCP and bring it up, run
-    the following commands:
+    To autoconfigure a connection via DHCP and bring it up, use the arrow keys
+    to select the <computeroutput>Activate a connection</computeroutput>
+    menu item and then press <userinput>ENTER</userinput>.
   </para>
   <para>
-    <userinput>nmcli conn mod <replaceable>name</replaceable> ipv4.method auto</userinput>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="rhel7-nmtui-activate-menu.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
   </para>
   <para>
-    <userinput>nmcli conn up <replaceable>name</replaceable></userinput>
-  </para>
-  <para>
-    Where <userinput><replaceable>name</replaceable></userinput> is the
-    name of the connection to use, from the list above --.e.g.
-    <userinput>eth0</userinput>.
-  </para>
-  <para>
-    To start a given interface and assign IP parameters manually, give the
-    following commands:
-  </para>
-  <para>
-    <userinput>nmcli con mod <replaceable>name</replaceable> ipv4.addresses <replaceable>ip-addr</replaceable>/<replaceable>prefix</replaceable>
-      ipv4.gateway <replaceable>gateway-addr</replaceable> ipv4.dns
-      "<replaceable>dns1-addr</replaceable> <replaceable>dns2-addr</replaceable>"</userinput>
-  </para>
-  <para>
-      <userinput>nmcli conn mod <replaceable>name</replaceable> ipv4.method manual</userinput>
-  </para>
-  <para>
-      <userinput>nmcli connection up <replaceable>name</replaceable></userinput>
-  </para>
-  <para>
-    Where <userinput><replaceable>ip-addr</replaceable></userinput> is the
-    IP address to use,
-    <userinput><replaceable>prefix</replaceable></userinput> is the netmask
-    prefix,
-    <userinput><replaceable>gateway-ip</replaceable></userinput> is the gateway
-    IP address and
-    <userinput><replaceable>dnsX-addr</replaceable></userinput> are the DNS
-    server address(es). (If you are used to specifying a netmask in the more
-    common 'dotted.quad' notation, a 'cheat sheet' that provides prefix
-    values for the most common values is available at
-    <ulink url="https://www.aelius.com/njh/subnet_sheet.html">
-      https://www.aelius.com/njh/subnet_sheet.html</ulink>).
-  </para>
-  <para>
-    Once the network has been initialized, the settings can be made persistent
-    by the command:
-  </para>
-  <para>
-    <userinput>nmcli con mod <replaceable>name</replaceable> connection.autoconnect yes</userinput>
+    Using the arrow keys and the spacebar, select the desired network
+    interface on the left, then select the
+    <computeroutput>Activate</computeroutput> item on the right and press
+    <userinput>ENTER</userinput>. Finally, select the
+    <computeroutput>Quit</computeroutput> and press <userinput>ENTER</userinput>
+    to exit the utility.
   </para>
 
   <para>

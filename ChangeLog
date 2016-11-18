@@ -123,3 +123,6 @@
 2016-07-25 Fred Gleason <fredg@paravelsystems.com>
 	* Added the 'cups' package to the set
 	of installed packages in 'centos7/install_rivendell.sh'.
+2016-11-18 Fred Gleason <fredg@paravelsystems.com>
+	* Updated 'docs/rivendell-install-rhel7.xml' to use nmtui(8) for
+	initial network configuration instead of nmcli(8).
