@@ -1,6 +1,17 @@
 The NEWS file for the rivendell-install package.
 
 -------------------------------------------------------------------------------
+v0.7.2 --  11/18/2016
+
+   Fourth BETA release.
+
+   Updated RHEL 7 instructions to use nmtui(8) rather than nmcli(8) for
+   the initial network configuration.
+
+   Added several packages to the base RHEL7 installation. See the ChangeLog
+   for details.
+
+-------------------------------------------------------------------------------
 v0.7.1 --  7/19/2016
 
    Third BETA release.
