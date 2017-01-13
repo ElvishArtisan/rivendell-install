@@ -137,3 +137,5 @@
 2017-01-13 Fred Gleason <fredg@paravelsystems.com>
 	* Hard-coded the installation location of the web content in
 	'rivendell-install-web.spec.in'.
+2017-01-13 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.7.4.
