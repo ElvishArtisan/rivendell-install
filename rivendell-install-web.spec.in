@@ -49,7 +49,6 @@ Web documentation for the Rivendell-install package.
 rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT@libexecdir@
 cp docs/*.html $RPM_BUILD_ROOT@libexecdir@/
-cp docs/*.pdf $RPM_BUILD_ROOT@libexecdir@/
 cp docs/*.png $RPM_BUILD_ROOT@libexecdir@/
 
 

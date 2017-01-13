@@ -129,3 +129,6 @@
 2016-11-18 Fred Gleason <fredg@paravelsystems.com>
 	* Updated 'NEWS'.
 	* Incremented the package version to 0.7.1.
+2017-01-13 Fred Gleason <fredg@paravelsystems.com>
+	* Clarified the installation instructions in 'docs/' by specifying
+	the absolute path to the installation script.
