@@ -60,7 +60,7 @@ systemctl set-default graphical.target
 #
 # Install Dependencies
 #
-yum -y install patch evince telnet lwmon nc samba qt3-config polymer paravelview ntp emacs twolame libmad nfs-utils cifs-utils samba-client ssvnc xfce4-screenshooter net-tools alsa-utils cups tigervnc-server-minimal
+yum -y install patch evince telnet lwmon nc samba qt3-config polymer paravelview ntp emacs twolame libmad nfs-utils cifs-utils samba-client ssvnc xfce4-screenshooter net-tools alsa-utils cups tigervnc-server-minimal pygtk2 cups system-config-printer gedit
 
 if test $MODE = "server" ; then
     #

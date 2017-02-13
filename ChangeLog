@@ -144,3 +144,6 @@
 	of installed packages in 'centos7/install_rivendell.sh'.
 2017-02-08 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 0.8.0.
+2017-02-13 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'pygtk2', 'cups', 'gedit' and 'system-config-printer' to
+	the set of installed packages in 'centos7/install_rivendell.sh'.
