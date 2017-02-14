@@ -152,3 +152,5 @@
 2017-02-14 Fred Gleason <fredg@paravelsystems.com>
 	* Modified instructions for setting the MariaDB password in
 	'docs/rivendell-install-rhel7.xml'.
+2017-02-14 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.8.1.
