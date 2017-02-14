@@ -302,11 +302,6 @@
 	name of the system for <replaceable>host</replaceable>):
       </para>
       <para>
-	<userinput>echo "SET PASSWORD FOR root@<replaceable>host</replaceable>
-	= PASSWORD('<replaceable>pwd</replaceable>');" |
-	mysql -u root</userinput>
-      </para>
-      <para>
 	<userinput>echo "SET PASSWORD FOR root@localhost = 
 	PASSWORD('<replaceable>pwd</replaceable>');" |
 	mysql -u root</userinput>
