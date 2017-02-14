@@ -115,6 +115,7 @@ fi
 #
 patch /etc/selinux/config /usr/share/rivendell-install/disable-selinux.patch
 systemctl disable firewalld
+yum -y remove chrony
 systemctl start ntpd
 systemctl enable ntpd
 rm -f /etc/asound.conf

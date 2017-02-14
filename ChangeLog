@@ -154,3 +154,6 @@
 	'docs/rivendell-install-rhel7.xml'.
 2017-02-14 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 0.8.1.
+2017-02-14 Fred Gleason <fredg@paravelsystems.com>
+	* Added a yum(8) call to remove the 'chrony' package in
+	'centos7/install_rivendell.sh'.
