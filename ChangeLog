@@ -165,3 +165,5 @@
 	* Fixed a bug in 'rivendell-install-rhel7.spec.in' that prevented
 	'/etc/systemd/system/mariadb.service.d/limit.conf' from being
 	installed on CentOS 7 setups.
+2017-02-16 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.8.3.
