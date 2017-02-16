@@ -159,3 +159,9 @@
 	'centos7/install_rivendell.sh'.
 2017-02-14 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 0.8.2.
+2017-02-15 Fred Gleason <fredg@paravelsystems.com>
+	* Extended the default files-open limit for MariaDB to 16368.
+2017-02-16 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a bug in 'rivendell-install-rhel7.spec.in' that prevented
+	'/etc/systemd/system/mariadb.service.d/limit.conf' from being
+	installed on CentOS 7 setups.

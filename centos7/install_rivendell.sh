@@ -69,6 +69,9 @@ if test $MODE = "server" ; then
     yum -y install mariadb-server
     systemctl start mariadb
     systemctl enable mariadb
+    mkdir -p /etc/systemd/system/mariadb.service.d/
+    cp /usr/share/rivendell-install/limits.conf /etc/systemd/system/mariadb.service.d/
+    systemctl daemon-reload
 
     #
     # Enable DB Access for all remote hosts
@@ -102,6 +105,9 @@ if test $MODE = "standalone" ; then
     yum -y install mariadb-server
     systemctl start mariadb
     systemctl enable mariadb
+    mkdir -p /etc/systemd/system/mariadb.service.d/
+    cp /usr/share/rivendell-install/limits.conf /etc/systemd/system/mariadb.service.d/
+    systemctl daemon-reload
 
     #
     # Enable CIFS File Sharing

@@ -23,6 +23,7 @@
 EXTRA_DIST = disable-selinux.patch\
              install_rivendell.sh\
              install_rivendell_devel.sh\
+             limits.conf\
              qt_plugins_3.3rc\
              qtrc\
              smb.conf\
