@@ -123,3 +123,5 @@
 2016-07-25 Fred Gleason <fredg@paravelsystems.com>
 	* Added the 'cups' package to the set
 	of installed packages in 'centos7/install_rivendell.sh'.
+2017-03-08 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'centos7/install_mingw32_devel.sh'.
