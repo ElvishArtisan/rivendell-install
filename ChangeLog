@@ -123,5 +123,49 @@
 2016-07-25 Fred Gleason <fredg@paravelsystems.com>
 	* Added the 'cups' package to the set
 	of installed packages in 'centos7/install_rivendell.sh'.
+2016-11-18 Fred Gleason <fredg@paravelsystems.com>
+	* Updated 'docs/rivendell-install-rhel7.xml' to use nmtui(8) for
+	initial network configuration instead of nmcli(8).
+2016-11-18 Fred Gleason <fredg@paravelsystems.com>
+	* Updated 'NEWS'.
+	* Incremented the package version to 0.7.1.
+2017-01-13 Fred Gleason <fredg@paravelsystems.com>
+	* Clarified the installation instructions in 'docs/' by specifying
+	the absolute path to the installation script.
+2017-01-13 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.7.3.
+2017-01-13 Fred Gleason <fredg@paravelsystems.com>
+	* Hard-coded the installation location of the web content in
+	'rivendell-install-web.spec.in'.
+2017-01-13 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.7.4.
+2017-02-08 Fred Gleason <fredg@paravelsystems.com>
+	* Added the 'tigervnc-server-minimal' package to the set
+	of installed packages in 'centos7/install_rivendell.sh'.
+2017-02-08 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.8.0.
+2017-02-13 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'pygtk2', 'cups', 'gedit' and 'system-config-printer' to
+	the set of installed packages in 'centos7/install_rivendell.sh'.
+2017-02-14 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'centos7/visual.sh'.
+2017-02-14 Fred Gleason <fredg@paravelsystems.com>
+	* Modified instructions for setting the MariaDB password in
+	'docs/rivendell-install-rhel7.xml'.
+2017-02-14 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.8.1.
+2017-02-14 Fred Gleason <fredg@paravelsystems.com>
+	* Added a yum(8) call to remove the 'chrony' package in
+	'centos7/install_rivendell.sh'.
+2017-02-14 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.8.2.
+2017-02-15 Fred Gleason <fredg@paravelsystems.com>
+	* Extended the default files-open limit for MariaDB to 16368.
+2017-02-16 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a bug in 'rivendell-install-rhel7.spec.in' that prevented
+	'/etc/systemd/system/mariadb.service.d/limit.conf' from being
+	installed on CentOS 7 setups.
+2017-02-16 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.8.3.
 2017-03-08 Fred Gleason <fredg@paravelsystems.com>
 	* Added 'centos7/install_mingw32_devel.sh'.

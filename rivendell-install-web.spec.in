@@ -42,15 +42,14 @@ Web documentation for the Rivendell-install package.
 
 
 %build
-%configure --libexecdir=@libexecdir@
+%configure --libexecdir=/home/static/htdocs/rivendell-install
 
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT@libexecdir@
-cp docs/*.html $RPM_BUILD_ROOT@libexecdir@/
-cp docs/*.pdf $RPM_BUILD_ROOT@libexecdir@/
-cp docs/*.png $RPM_BUILD_ROOT@libexecdir@/
+mkdir -p $RPM_BUILD_ROOT/home/static/htdocs/rivendell-install
+cp docs/*.html $RPM_BUILD_ROOT/home/static/htdocs/rivendell-install
+cp docs/*.png $RPM_BUILD_ROOT/home/static/htdocs/rivendell-install
 
 
 %clean
@@ -59,7 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-@libexecdir@/*
+/home/static/htdocs/rivendell-install/*
 
 
 %changelog

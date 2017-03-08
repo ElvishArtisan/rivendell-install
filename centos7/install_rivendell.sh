@@ -60,7 +60,7 @@ systemctl set-default graphical.target
 #
 # Install Dependencies
 #
-yum -y install patch evince telnet lwmon nc samba qt3-config polymer paravelview ntp emacs twolame libmad nfs-utils cifs-utils samba-client ssvnc xfce4-screenshooter net-tools alsa-utils cups
+yum -y install patch evince telnet lwmon nc samba qt3-config polymer paravelview ntp emacs twolame libmad nfs-utils cifs-utils samba-client ssvnc xfce4-screenshooter net-tools alsa-utils cups tigervnc-server-minimal pygtk2 cups system-config-printer gedit
 
 if test $MODE = "server" ; then
     #
@@ -69,6 +69,9 @@ if test $MODE = "server" ; then
     yum -y install mariadb-server
     systemctl start mariadb
     systemctl enable mariadb
+    mkdir -p /etc/systemd/system/mariadb.service.d/
+    cp /usr/share/rivendell-install/limits.conf /etc/systemd/system/mariadb.service.d/
+    systemctl daemon-reload
 
     #
     # Enable DB Access for all remote hosts
@@ -102,6 +105,9 @@ if test $MODE = "standalone" ; then
     yum -y install mariadb-server
     systemctl start mariadb
     systemctl enable mariadb
+    mkdir -p /etc/systemd/system/mariadb.service.d/
+    cp /usr/share/rivendell-install/limits.conf /etc/systemd/system/mariadb.service.d/
+    systemctl daemon-reload
 
     #
     # Enable CIFS File Sharing
@@ -115,9 +121,11 @@ fi
 #
 patch /etc/selinux/config /usr/share/rivendell-install/disable-selinux.patch
 systemctl disable firewalld
+yum -y remove chrony
 systemctl start ntpd
 systemctl enable ntpd
 rm -f /etc/asound.conf
+cp /usr/share/rivendell-install/visual.sh /etc/profile.d/
 cp /usr/share/rivendell-install/asound.conf /etc/
 cp /usr/share/rivendell-install/*.repo /etc/yum.repos.d/
 cp /usr/share/rivendell-install/RPM-GPG-KEY* /etc/pki/rpm-gpg/
