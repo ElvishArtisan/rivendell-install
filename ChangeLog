@@ -169,3 +169,5 @@
 	* Incremented the package version to 0.8.3.
 2017-03-08 Fred Gleason <fredg@paravelsystems.com>
 	* Added 'centos7/install_mingw32_devel.sh'.
+2017-03-18 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'ntfs-3g' and 'ntfsprogs' packages to the CentOS 7 install.
