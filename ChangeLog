@@ -177,3 +177,5 @@
 	* Added the 'lame' package to the CentOS 6 and 7 install.
 	* Added the 'openssl-devel' package to the CentOS 6 and 7
 	development installs.
+2017-06-22 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.8.5.
