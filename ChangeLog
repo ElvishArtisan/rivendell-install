@@ -173,3 +173,7 @@
 	* Added 'ntfs-3g' and 'ntfsprogs' packages to the CentOS 7 install.
 2017-03-18 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 0.8.4.
+2017-06-22 Fred Gleason <fredg@paravelsystems.com>
+	* Added the 'lame' package to the CentOS 6 and 7 install.
+	* Added the 'openssl-devel' package to the CentOS 6 and 7
+	development installs.

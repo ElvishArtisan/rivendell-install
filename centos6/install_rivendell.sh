@@ -146,7 +146,7 @@ cp /usr/share/rivendell-install/qtrc /home/rd/.qt/
 chown -R rd:rd /home/rd
 chmod 775 /home/rd
 patch /etc/gdm/custom.conf /usr/share/rivendell-install/autologin.patch
-yum -y install rivendell
+yum -y install lame rivendell
 
 if test $MODE = "client" ; then
     #

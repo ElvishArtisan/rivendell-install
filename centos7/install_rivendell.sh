@@ -151,7 +151,7 @@ chown -R rd:rd /home/rd
 chmod 0755 /home/rd
 patch /etc/gdm/custom.conf /usr/share/rivendell-install/autologin.patch
 yum -y remove alsa-firmware alsa-firmware-tools
-yum -y install rivendell
+yum -y install lame rivendell
 
 if test $MODE = "client" ; then
     #
