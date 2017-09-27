@@ -179,3 +179,6 @@
 	development installs.
 2017-06-22 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 0.8.5.
+2017-09-26 Fred Gleason <fredg@paravelsystems.com>
+	* Added yum call to remove 'openbox' package in
+	'centos7/install_rivendell.sh'.
