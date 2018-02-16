@@ -41,11 +41,22 @@ EXTRA_DIST = rhel6-create-user.png\
              rhel6-start-su.png\
              rhel6-start-terminal.png\
              rhel6-start-update.png\
+             rhel7-addnewmountpoint.png\
+             rhel7-addnewmountpointefi.png\
+             rhel7-bootscreen.png\
+             rhel7-installationcomplete.png\
+             rhel7-installationdestination.png\
+             rhel7-installationsummary.png\
+             rhel7-installationsummarydone.png\
+             rhel7-installing-set-root-password.png\
+             rhel7-manualpartitioning.png\
+             rhel7-manualpartitioning_standard.png\
              rhel7-minimal-mode.png\
              rhel7-nmtui-activate-menu.png\
              rhel7-nmtui-invocation.png\
              rhel7-nmtui-mainscreen.png\
              rhel7-root-login.png\
+             rhel7-setlanguage.png\
              rhel7-set-root-password.png\
              rivendell-install-rhel6.html\
              rivendell-install-rhel6.xml\

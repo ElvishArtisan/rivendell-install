@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<article xmlns="http://docbook.org/ns/docbook" version="5.0">
+<article xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
 <info>
-  <title>Installing Rivendell on an RHEL-7 System</title>
+  <title>Installing Rivendell on an CentOS-7 System</title>
   <author>
     <personname>
       <firstname>Fred</firstname>
@@ -17,15 +17,12 @@
     <title>Overview</title>
     <para>
       This technical note contains procedures for installing the
-      Rivendell Radio Automation System on a system running RHEL 7.x derived
+      Rivendell Radio Automation System on a system running CentOS -7.
+      While the screenshots are specific to CentOS-7, these instructions
+      are also applicable to other RedHat Enterprise 7 (RHEL-7) -based
       distributions. Such distributions include:
     </para>
     <itemizedlist>
-      <listitem>
-	<para>
-	  Community Enterprise OS (CentOS) 7.x
-	</para>
-      </listitem>
       <listitem>
 	<para>
 	  RedHat Enterprise Linux 7.x
@@ -38,7 +35,7 @@
       </listitem>
     </itemizedlist>
     <para>
-      Installing Rivendell on these platforms consists of three primary steps:
+      Installing Rivendell on CentOS-7 consists of three primary steps:
     </para>
     <orderedlist>
       <listitem>
@@ -66,26 +63,27 @@
     <itemizedlist>
       <listitem>
 	<para>
-	  Target hardware.  64 bit (x86_64) AMD or Intel architecture
-	  is supported.
+	  Target hardware. 64 bit (x86_64) AMD or Intel architecture
+	  is supported. For the purposes of this Note, the target machine
+	  will be assumed to have a single, blank hard drive. Installations
+	  utilizing multiple hard drives (including RAID arrays) are
+	  possible, but beyond the scope of this Note.
 	</para>
       </listitem>
       <listitem>
 	<para>
-	  A generic installer image for the distribution.  DVD, Network
-	  and USB installation sources are all supported.
+	  A 'Minimal ISO' installer image for CentOS-7, available at
+	  <link xlink:href="http://centos.org/download">
+	    http://centos.org/download</link>. After downloading the
+	    ISO image, burn it to a blank DVD or make a "bootable" USB
+	    key using
+	    <link xlink:href="https://wiki.centos.org/HowTos/InstallFromUSBkey">
+	      these instructions</link>.
 	</para>
       </listitem>
       <listitem>
 	<para>
 	  A working Internet connection.
-	</para>
-      </listitem>
-      <listitem>
-	<para>
-	  A basic working knowledge of how to install vanilla RHEL 7.x.
-	  Consult the documentation of the particular distribution for
-	  more information.
 	</para>
       </listitem>
     </itemizedlist>
@@ -95,29 +93,180 @@
 <sect1>
   <title>Installing the Base Distribution</title>
   <para>
-    Install the base distribution in 'Minimal' mode.
+    Boot the CentOS-7 installation media (DVD or USB key). You should wind
+    up at the initial boot screen.
   </para>
   <para>
     <mediaobject>
       <imageobject>
-	<imagedata fileref="rhel7-minimal-mode.png" scale="50"/>
+	<imagedata fileref="rhel7-bootscreen.png" scale="90"/>
       </imageobject>
     </mediaobject>
   </para>
   <para>
-    Set the <userinput>root</userinput> password, but do not create any
-    other users.
+    Highlight the <computeroutput>Install CentOS Linux 7</computeroutput>
+    prompt and then press <userinput>Enter</userinput> to start the
+    installation.
+  </para>
+  <para>
+    You will be asked to specify the language to use for the install.
+    Choose and then touch the <computeroutput>Continue</computeroutput>
+    button.
   </para>
   <para>
     <mediaobject>
       <imageobject>
-	<imagedata fileref="rhel7-set-root-password.png" scale="90"/>
+	<imagedata fileref="rhel7-setlanguage.png" scale="90"/>
       </imageobject>
     </mediaobject>
   </para>
   <para>
-    When basic installation is complete and after rebooting, log in as
-    user <userinput>root</userinput>.
+    You should then be brought to the
+    <computeroutput>INSTALLATION SUMMARY</computeroutput> screen.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="rhel7-installationsummary.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    Touch the <computeroutput>INSTALLATION DESTINATION</computeroutput>
+    item to bring up the 
+    <computeroutput>INSTALLATION DESTINATION</computeroutput> screen.
+    In the <computeroutput>Other Storage Options</computeroutput> section,
+    change the <computeroutput>Partitioning</computeroutput> selection from
+    <computeroutput>Automatically configure partitioning</computeroutput> to
+    <computeroutput>I will configure partitioning.</computeroutput>.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="rhel7-installationdestination.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    Touch the <computeroutput>Done</computeroutput> button to bring up the
+    <computeroutput>MANUAL PARTITIONING</computeroutput> screen.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="rhel7-manualpartitioning.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    If there are any existing partitions on the system, delete them by touching
+    the <computeroutput>-</computeroutput> button. Then, change the
+    paritioning scheme from <computeroutput>LVM</computeroutput> to
+    <computeroutput>Standard Partition</computeroutput>.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="rhel7-manualpartitioning_standard.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    Touch the <computeroutput>+</computeroutput> button to bring up the
+    <computeroutput>ADD A NEW MOUNT POINT</computeroutput> dialog.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="rhel7-addnewmountpoint.png" scale="50"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    Pull down the <computeroutput>Mount Point:</computeroutput> list and
+    scan the entries. If you see a <computeroutput>/boot/efi</computeroutput>
+    entry, select it, then enter <userinput>1G</userinput> in the
+    <computeroutput>Desired Capacity:</computeroutput> field, then
+    touch the <computeroutput>Add mount point</computeroutput> button.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="rhel7-addnewmountpointefi.png" scale="50"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    Repeat the above procedure, adding the following mount points:
+  </para>
+  <para>
+    <table xml:id="table.mountpoints" frame="all">
+      <title>Mount Points</title>
+      <tgroup cols="2" align="left" colsep="1" rowsep="1">
+	<colspec colname="mountpoint" />
+	<colspec colname="desiredcapacity" />
+	<thead>
+	  <row><entry>Mount Point</entry><entry>Desired Capacity</entry></row>
+	</thead>
+	<tbody>
+	  <row><entry>swap</entry><entry>8192M</entry></row>
+	  <row><entry>/</entry><entry>25G</entry></row>
+	  <row><entry>/home</entry><entry>100G</entry></row>
+	  <row><entry>/var</entry><entry>[leave blank]</entry></row>
+	</tbody>
+      </tgroup>
+    </table>
+  </para>
+  <para>
+    After all mount points have been added, touch the
+    <computeroutput>Done</computeroutput> button. You may see a
+    <computeroutput>SUMMARY OF CHANGES</computeroutput> dialog asking you
+    to confirm the partitioning. Touch the
+    <computeroutput>Accept Changes</computeroutput> button and return to
+    the <computeroutput>INSTALLATION SUMMARY</computeroutput> screen.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="rhel7-installationsummarydone.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    Touch the <computeroutput>Begin Installation</computeroutput> button
+    to apply your partitioning settings and install CentOS.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="rhel7-installing-set-root-password.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    While the system is installing, touch the
+    <computeroutput>ROOT PASSWORD</computeroutput> entry and set the
+    administrative (root) password.
+    <warning>
+      DO NOT FORGET WHAT YOU ENTER HERE, AS
+      YOU WILL NEED IT TO MANAGE YOUR RIVENDELL SYSTEM!
+    </warning>
+  </para>
+  <para>
+    When installation is complete, touch the
+    <computeroutput>Reboot</computeroutput> button.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="rhel7-installationcomplete.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    The system will reboot and come up to the login screen. Login
+    in as user &quot;root&quot;, using the root password that you set
+    earlier.
   </para>
   <para>
     <mediaobject>

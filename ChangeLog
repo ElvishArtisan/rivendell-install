@@ -184,3 +184,5 @@
 	'centos7/install_rivendell.sh'.
 2017-09-27 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 0.8.6.
+2018-02-16 Fred Gleason <fredg@paravelsystems.com>
+	* Added a section on installing CentOS-7 base distribution.
