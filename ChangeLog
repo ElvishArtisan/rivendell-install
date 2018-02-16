@@ -186,3 +186,5 @@
 	* Incremented the package version to 0.8.6.
 2018-02-16 Fred Gleason <fredg@paravelsystems.com>
 	* Added a section on installing CentOS-7 base distribution.
+2018-02-16 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.9.0.
