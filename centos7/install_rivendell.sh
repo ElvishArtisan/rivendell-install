@@ -74,7 +74,18 @@ if test $MODE = "server" ; then
     systemctl daemon-reload
 
     #
-    # Enable DB Access for all remote hosts
+    # Create Database
+    #
+    echo "CREATE DATABASE Rivendell;" | mysql -u root
+
+    #
+    # Enable DB Access for localhost
+    #
+    echo "CREATE USER 'rduser'@'localhost' IDENTIFIED BY 'letmein';" | mysql -u root
+    echo "GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES ON Rivendell.* TO 'rduser'@'localhost';" | mysql -u root
+
+    #
+    # Enable DB Access for remote hosts
     #
     echo "CREATE USER 'rduser'@'%' IDENTIFIED BY 'letmein';" | mysql -u root
     echo "GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES ON Rivendell.* TO 'rduser'@'%';" | mysql -u root
@@ -108,6 +119,17 @@ if test $MODE = "standalone" ; then
     mkdir -p /etc/systemd/system/mariadb.service.d/
     cp /usr/share/rivendell-install/limits.conf /etc/systemd/system/mariadb.service.d/
     systemctl daemon-reload
+
+    #
+    # Create Database
+    #
+    echo "CREATE DATABASE Rivendell;" | mysql -u root
+
+    #
+    # Enable DB Access for localhost
+    #
+    echo "CREATE USER 'rduser'@'localhost' IDENTIFIED BY 'letmein';" | mysql -u root
+    echo "GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES ON Rivendell.* TO 'rduser'@'localhost';" | mysql -u root
 
     #
     # Enable CIFS File Sharing
@@ -152,6 +174,13 @@ chmod 0755 /home/rd
 patch /etc/gdm/custom.conf /usr/share/rivendell-install/autologin.patch
 yum -y remove alsa-firmware alsa-firmware-tools
 yum -y install lame rivendell
+
+if test $MODE = "standalone" ; then
+    /usr/sbin/rddbmgr --create --generate-audio
+fi
+if test $MODE = "server" ; then
+    /usr/sbin/rddbmgr --create --generate-audio
+fi
 
 if test $MODE = "client" ; then
     #

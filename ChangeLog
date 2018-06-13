@@ -188,3 +188,5 @@
 	* Added a section on installing CentOS-7 base distribution.
 2018-02-16 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 0.9.0.
+2018-06-18 Fred Gleason <fredg@paravelsystems.com>
+	* Modified the RHEL 7 setup to work with rddbmgr(8).
