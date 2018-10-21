@@ -2,7 +2,7 @@
 
 # install_rivendell_centos7.sh
 #
-# Install Rivendell on a CentOS 7 system
+# Install Rivendell 3.x on a CentOS 7 system
 #
 
 #
@@ -60,7 +60,7 @@ systemctl set-default graphical.target
 #
 # Install Dependencies
 #
-yum -y install patch evince telnet lwmon nc samba qt3-config polymer paravelview ntp emacs twolame libmad nfs-utils cifs-utils samba-client ssvnc xfce4-screenshooter net-tools alsa-utils cups tigervnc-server-minimal pygtk2 cups system-config-printer gedit ntfs-3g ntfsprogs
+yum -y install patch evince telnet lwmon nc samba paravelview ntp emacs twolame libmad nfs-utils cifs-utils samba-client ssvnc xfce4-screenshooter net-tools alsa-utils cups tigervnc-server-minimal pygtk2 cups system-config-printer gedit ntfs-3g ntfsprogs
 
 if test $MODE = "server" ; then
     #
@@ -110,6 +110,13 @@ if test $MODE = "standalone" ; then
     systemctl daemon-reload
 
     #
+    # Enable DB Access for localhost
+    #
+    echo "CREATE DATABASE Rivendell;" | mysql -u root
+    echo "CREATE USER 'rduser'@'localhost' IDENTIFIED BY 'letmein';" | mysql -u root
+    echo "GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES ON Rivendell.* TO 'rduser'@'localhost';" | mysql -u root
+
+    #
     # Enable CIFS File Sharing
     #
     systemctl enable smb
@@ -138,9 +145,6 @@ cp /usr/share/rivendell-install/no_screen_blank.conf /etc/X11/xorg.conf.d/
 mkdir -p /etc/skel/Desktop
 cp /usr/share/rivendell-install/skel/rog-1.3.3.pdf /etc/skel/Desktop/Rivendell\ Ops\ Guide.pdf
 cp /usr/share/rivendell-install/skel/paravel_support.pdf /etc/skel/Desktop/First\ Steps.pdf
-mkdir -p /etc/skel/.qt
-cp /usr/share/rivendell-install/qt_plugins_3.3rc /etc/skel/.qt/
-cp /usr/share/rivendell-install/qtrc /etc/skel/.qt/
 adduser -c Rivendell\ Audio --groups audio rd
 mkdir -p /home/rd/rd_xfer
 mkdir -p /home/rd/music_export
@@ -152,6 +156,14 @@ chmod 0755 /home/rd
 patch /etc/gdm/custom.conf /usr/share/rivendell-install/autologin.patch
 yum -y remove alsa-firmware alsa-firmware-tools
 yum -y install lame rivendell
+
+if test $MODE = "server" ; then
+    rddbmgr --create --generate-audio
+fi
+
+if test $MODE = "standalone" ; then
+    rddbmgr --create --generate-audio
+fi
 
 if test $MODE = "client" ; then
     #
