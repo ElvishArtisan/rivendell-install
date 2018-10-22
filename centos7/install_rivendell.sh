@@ -65,7 +65,8 @@ fi
 # Configure Repos
 #
 yum -y install epel-release
-wget http://$REPO_HOSTNAME/CentOS/7com/Paravel-Commercial.repo -P /etc/yum.repos.d/
+wget http://$REPO_HOSTNAME/CentOS/7/Paravel-Broadcast.repo -N -P /etc/yum.repos.d/
+wget http://$REPO_HOSTNAME/CentOS/7/RPM-GPG-KEY-Paravel-Broadcast -N -P /etc/pki/rpm-gpg
 
 #
 # Install XFCE4
