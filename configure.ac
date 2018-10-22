@@ -4,7 +4,7 @@ dnl Autoconf configuration for the rivendell_install package.
 dnl
 dnl Use autoconf to process this into a configure script
 dnl
-dnl   (C) Copyright 2016 Fred Gleason <fredg@paravelsystems.com>
+dnl   (C) Copyright 2016-2018 Fred Gleason <fredg@paravelsystems.com>
 dnl
 dnl   This program is free software; you can redistribute it and/or modify
 dnl   it under the terms of the GNU General Public License version 2 as
@@ -40,7 +40,7 @@ if test $ar_distro_major -eq 7 ; then
   ln -s rivendell-install-rhel7.spec rivendell-install.spec
 fi
 if test $ar_distro_major -eq 6 ; then
-  ln -s rivendell-install-rhel6.spec rivendell-install.spec
+  AC_MSG_ERROR(CentOS 6 is not supported by this release.)
 fi
 
 #
@@ -68,11 +68,9 @@ fi
 AC_SUBST(RPM_DATESTAMP,`date +%a\ %b\ %d\ %Y`)
 
 AC_CONFIG_FILES([ \
-    centos6/Makefile \
     centos7/Makefile \
     common/Makefile \
     docs/Makefile \
-    rivendell-install-rhel6.spec \
     rivendell-install-rhel7.spec \
     rivendell-install-web.spec \
     Makefile ])

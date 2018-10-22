@@ -27,21 +27,9 @@
 %.pdf:	%.xml
 	xsltproc $(DOCBOOK_STYLESHEETS)/fo/docbook.xsl $< | fop - -pdf $@
 
-all-local:	rivendell-install-rhel6.html\
-                rivendell-install-rhel7.html
+all-local:	rivendell-install-rhel7.html
 
-EXTRA_DIST = rhel6-create-user.png\
-             rhel6-edit-connections.png\
-             rhel6-enable-connection.png\
-             rhel6-enter-password.png\
-             rhel6-enter-root-password.png\
-             rhel6-minimal-desktop-mode.png\
-             rhel6-root-prompt.png\
-             rhel6-select-connection.png\
-             rhel6-start-su.png\
-             rhel6-start-terminal.png\
-             rhel6-start-update.png\
-             rhel7-addnewmountpoint.png\
+EXTRA_DIST = rhel7-addnewmountpoint.png\
              rhel7-addnewmountpointefi.png\
              rhel7-bootscreen.png\
              rhel7-installationcomplete.png\
@@ -58,8 +46,6 @@ EXTRA_DIST = rhel6-create-user.png\
              rhel7-root-login.png\
              rhel7-setlanguage.png\
              rhel7-set-root-password.png\
-             rivendell-install-rhel6.html\
-             rivendell-install-rhel6.xml\
              rivendell-install-rhel7.html\
              rivendell-install-rhel7.xml
 
