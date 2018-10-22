@@ -74,6 +74,13 @@ if test $MODE = "server" ; then
     systemctl daemon-reload
 
     #
+    # Enable DB Access for localhost
+    #
+    echo "CREATE DATABASE Rivendell;" | mysql -u root
+    echo "CREATE USER 'rduser'@'localhost' IDENTIFIED BY 'letmein';" | mysql -u root
+    echo "GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES ON Rivendell.* TO 'rduser'@'localhost';" | mysql -u root
+
+    #
     # Enable DB Access for all remote hosts
     #
     echo "CREATE USER 'rduser'@'%' IDENTIFIED BY 'letmein';" | mysql -u root
