@@ -196,3 +196,8 @@
 2018-10-22 Fred Gleason <fredg@paravelsystems.com>
 	* Removed the 'win32_setups' share from the Samba configuration in
 	the 'centos7/' installation script.
+2018-10-22 Fred Gleason <fredg@paravelsystems.com>
+	* Modified the 'centos7/' installer to use the Operations Guide
+	from the 'rivendell-opsguide' package.
+	* Added custom tailored default configuration for Xfce4 to the
+	'centos7/' installer.

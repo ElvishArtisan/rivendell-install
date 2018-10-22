@@ -28,7 +28,8 @@ EXTRA_DIST = disable-selinux.patch\
              qt_plugins_3.3rc\
              qtrc\
              smb.conf\
-             visual.sh
+             visual.sh\
+             xfce-config.tgz
 
 CLEANFILES = *~
 

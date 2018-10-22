@@ -150,8 +150,9 @@ mv /etc/samba/smb.conf /etc/samba/smb-original.conf
 cp /usr/share/rivendell-install/smb.conf /etc/samba/
 cp /usr/share/rivendell-install/no_screen_blank.conf /etc/X11/xorg.conf.d/
 mkdir -p /etc/skel/Desktop
-cp /usr/share/rivendell-install/skel/rog-1.3.3.pdf /etc/skel/Desktop/Rivendell\ Ops\ Guide.pdf
 cp /usr/share/rivendell-install/skel/paravel_support.pdf /etc/skel/Desktop/First\ Steps.pdf
+ln -s /usr/share/rivendell/opsguide.pdf /etc/skel/Desktop/Operations\ Guide.pdf
+tar -C /etc/skel -zxf /usr/share/rivendell-install/xfce-config.tgz
 adduser -c Rivendell\ Audio --groups audio rd
 mkdir -p /home/rd/rd_xfer
 mkdir -p /home/rd/music_export
@@ -162,7 +163,7 @@ chown -R rd:rd /home/rd
 chmod 0755 /home/rd
 patch /etc/gdm/custom.conf /usr/share/rivendell-install/autologin.patch
 yum -y remove alsa-firmware alsa-firmware-tools
-yum -y install lame rivendell
+yum -y install lame rivendell rivendell-opsguide
 
 if test $MODE = "server" ; then
     rddbmgr --create --generate-audio
