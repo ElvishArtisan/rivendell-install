@@ -1,8 +1,0 @@
-[usr]
-lib64/qt-3.3/plugins/inputmethods/libqimsw-multi.so=30300^e3^ex86_64 Linux g++-4.* full-config^e2014-06-09T23:27:25^e
-lib64/qt-3.3/plugins/inputmethods/libqimsw-none.so=30300^e3^ex86_64 Linux g++-4.* full-config^e2014-06-09T23:27:25^e
-lib64/qt-3.3/plugins/inputmethods/libqsimple.so=30300^e3^ex86_64 Linux g++-4.* full-config^e2014-06-09T23:27:25^e
-lib64/qt-3.3/plugins/inputmethods/libqxim.so=30300^e3^ex86_64 Linux g++-4.* full-config^e2014-06-09T23:27:25^e
-lib64/qt-3.3/plugins/sqldrivers/libqsqlmysql.so=30300^e3^ex86_64 Linux g++-4.* full-config^e2014-06-09T23:27:25^e
-lib64/qt-3.3/plugins/styles/polymer.so=30300^e3^ex86_64 Linux g++-4.* full-config^e2014-08-16T18:04:18^e
-

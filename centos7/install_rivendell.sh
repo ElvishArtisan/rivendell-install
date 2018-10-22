@@ -4,6 +4,23 @@
 #
 # Install Rivendell on a CentOS 7 system
 #
+#    Copyright (C) 2016-2018 Fred Gleason <fredg@paravelsystems.com>
+#
+#    This program is free software; you can redistribute it and/or modify
+#    it under the terms of version 2 of the GNU General Public License as
+#    published by the Free Software Foundation;
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program; if not, write to the Free Software
+#    Foundation, Inc., 59 Temple Place, Suite 330, 
+#    Boston, MA  02111-1307  USA
+#
+
 
 #
 # Site Defines
@@ -60,7 +77,7 @@ systemctl set-default graphical.target
 #
 # Install Dependencies
 #
-yum -y install patch evince telnet lwmon nc samba qt3-config polymer paravelview ntp emacs twolame libmad nfs-utils cifs-utils samba-client ssvnc xfce4-screenshooter net-tools alsa-utils cups tigervnc-server-minimal pygtk2 cups system-config-printer gedit ntfs-3g ntfsprogs
+yum -y install patch evince telnet lwmon nc samba qt-config polymer paravelview ntp emacs twolame libmad nfs-utils cifs-utils samba-client ssvnc xfce4-screenshooter net-tools alsa-utils cups tigervnc-server-minimal pygtk2 cups system-config-printer gedit ntfs-3g ntfsprogs
 
 if test $MODE = "server" ; then
     #
@@ -138,9 +155,8 @@ cp /usr/share/rivendell-install/no_screen_blank.conf /etc/X11/xorg.conf.d/
 mkdir -p /etc/skel/Desktop
 cp /usr/share/rivendell-install/skel/rog-1.3.3.pdf /etc/skel/Desktop/Rivendell\ Ops\ Guide.pdf
 cp /usr/share/rivendell-install/skel/paravel_support.pdf /etc/skel/Desktop/First\ Steps.pdf
-mkdir -p /etc/skel/.qt
-cp /usr/share/rivendell-install/qt_plugins_3.3rc /etc/skel/.qt/
-cp /usr/share/rivendell-install/qtrc /etc/skel/.qt/
+mkdir -p /etc/skel/.config
+cp /usr/share/rivendell-install/Trolltech.conf /etc/skel/.config/Trolltech.conf
 adduser -c Rivendell\ Audio --groups audio rd
 mkdir -p /home/rd/rd_xfer
 mkdir -p /home/rd/music_export

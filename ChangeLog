@@ -190,3 +190,4 @@
 	* Incremented the package version to 0.9.0.
 2018-10-22 Patrick Linstruth <patrick@deltecent.com>
 	* Remove support for CentOS 6
+	* Qt3 to Qt4
