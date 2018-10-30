@@ -201,3 +201,8 @@
 	from the 'rivendell-opsguide' package.
 	* Added custom tailored default configuration for Xfce4 to the
 	'centos7/' installer.
+2018-10-30 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.9.0rd3alpha00.
+2018-10-30 Fred Gleason <fredg@paravelsystems.com>
+	* Modified the RHEL7 installation instructions to have the user
+	enable 'Automatically connect' for the network interface.

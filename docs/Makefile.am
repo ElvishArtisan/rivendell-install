@@ -2,7 +2,7 @@
 ##
 ## docs/Automake.am for rivendell-install
 ##
-## (C) Copyright 2016 Fred Gleason <fredg@paravelsystems.com>
+## (C) Copyright 2016-2018 Fred Gleason <fredg@paravelsystems.com>
 ##
 ##   This program is free software; you can redistribute it and/or modify
 ##   it under the terms of the GNU General Public License version 2 as
@@ -52,7 +52,8 @@ EXTRA_DIST = rhel6-create-user.png\
              rhel7-manualpartitioning.png\
              rhel7-manualpartitioning_standard.png\
              rhel7-minimal-mode.png\
-             rhel7-nmtui-activate-menu.png\
+             rhel7-nmtui-edit-menu.png\
+             rhel7-nmtui-editconnection-menu.png\
              rhel7-nmtui-invocation.png\
              rhel7-nmtui-mainscreen.png\
              rhel7-root-login.png\
