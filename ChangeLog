@@ -206,3 +206,5 @@
 2018-10-30 Fred Gleason <fredg@paravelsystems.com>
 	* Modified the RHEL7 installation instructions to have the user
 	enable 'Automatically connect' for the network interface.
+2018-10-30 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.9.0rd3alpha01.
