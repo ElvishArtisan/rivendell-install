@@ -211,3 +211,5 @@
 2018-11-02 Fred Gleason <fredg@paravelsystems.com>
 	* Modified the RHEL7 installer to initialize the automounter
 	for all install types.
+2018-11-02 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.9.0rd3alpha02.
