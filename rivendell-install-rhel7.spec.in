@@ -66,6 +66,9 @@ cp common/autologin.patch $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/*.png $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/docbook5.sh $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/no_screen_blank.conf $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
+cp common/auto.rd.audiostore.template $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
+cp common/auto.misc.client_template $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
+cp common/auto.misc.template $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/rivendell-install/skel
 cp common/*.pdf $RPM_BUILD_ROOT%{_datadir}/rivendell-install/skel/

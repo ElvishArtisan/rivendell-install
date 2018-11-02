@@ -21,6 +21,9 @@
 
 EXTRA_DIST = adobe-linux-x86_64.repo\
              asound.conf\
+             auto.misc.template\
+             auto.misc.client_template\
+             auto.rd.audiostore.template\
              autologin.patch\
              docbook5.sh\
              no_screen_blank.conf\

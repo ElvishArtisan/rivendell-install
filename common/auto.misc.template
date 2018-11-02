@@ -1,0 +1,21 @@
+#
+# This is an automounter map and it has the following format
+# key [ -mount-options-separated-by-comma ] location
+# Details may be found in the autofs(5) manpage
+#
+# All mounts listed here will appear in the '/misc' directory.
+#
+
+# Sample entries:
+#
+# NFS Mount
+# my_mountpt	-fstype=nfs,defaults	nfs.example.com:/var/my_data
+
+# CIFS (For mounting Windows shares)
+# my_mountpt	-fstype=cifs,domain=my_dom,user=username,password=hackme,uid=1000,gid=1000	://windows.example.com/sharename
+
+# ############################################################################
+#  Put actual entries below here                                             #
+##############################################################################
+
+cdrom		-fstype=iso9660,ro,nosuid,nodev	:/dev/cdrom

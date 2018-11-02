@@ -60,7 +60,7 @@ systemctl set-default graphical.target
 #
 # Install Dependencies
 #
-yum -y install patch evince telnet lwmon nc samba paravelview ntp emacs twolame libmad nfs-utils cifs-utils samba-client ssvnc xfce4-screenshooter net-tools alsa-utils cups tigervnc-server-minimal pygtk2 cups system-config-printer gedit ntfs-3g ntfsprogs
+yum -y install patch evince telnet lwmon nc samba paravelview ntp emacs twolame libmad nfs-utils cifs-utils samba-client ssvnc xfce4-screenshooter net-tools alsa-utils cups tigervnc-server-minimal pygtk2 cups system-config-printer gedit ntfs-3g ntfsprogs autofs
 
 if test $MODE = "server" ; then
     #
@@ -154,11 +154,6 @@ cp /usr/share/rivendell-install/skel/paravel_support.pdf /etc/skel/Desktop/First
 ln -s /usr/share/rivendell/opsguide.pdf /etc/skel/Desktop/Operations\ Guide.pdf
 tar -C /etc/skel -zxf /usr/share/rivendell-install/xfce-config.tgz
 adduser -c Rivendell\ Audio --groups audio rd
-mkdir -p /home/rd/rd_xfer
-mkdir -p /home/rd/music_export
-mkdir -p /home/rd/music_import
-mkdir -p /home/rd/traffic_export
-mkdir -p /home/rd/traffic_import
 chown -R rd:rd /home/rd
 chmod 0755 /home/rd
 patch /etc/gdm/custom.conf /usr/share/rivendell-install/autologin.patch
@@ -166,23 +161,51 @@ yum -y remove alsa-firmware alsa-firmware-tools
 yum -y install lame rivendell rivendell-opsguide
 
 if test $MODE = "server" ; then
+    #
+    # Initialize Automounter
+    #
+    cp -f /usr/share/rivendell-install/auto.misc.template /etc/auto.misc
+    systemctl enable autofs
+
+    #
+    # Create Rivendell Database
+    #
     rddbmgr --create --generate-audio
 fi
 
 if test $MODE = "standalone" ; then
+    #
+    # Initialize Automounter
+    #
+    cp -f /usr/share/rivendell-install/auto.misc.template /etc/auto.misc
+    systemctl enable autofs
+
+    #
+    # Create Rivendell Database
+    #
     rddbmgr --create --generate-audio
 fi
 
 if test $MODE = "client" ; then
     #
-    # Add Remote Mounts
+    # Initialize Automounter
     #
-    echo "$IP_ADDR:/var/snd /var/snd nfs defaults 0 0" >> /etc/fstab
-    echo "$IP_ADDR:/home/rd/rd_xfer /home/rd/rd_xfer nfs defaults 0 0" >> /etc/fstab
-    echo "$IP_ADDR:/home/rd/music_export /home/rd/music_export nfs defaults 0 0" >> /etc/fstab
-    echo "$IP_ADDR:/home/rd/music_import /home/rd/music_import nfs defaults 0 0" >> /etc/fstab
-    echo "$IP_ADDR:/home/rd/traffic_export /home/rd/traffic_export nfs defaults 0 0" >> /etc/fstab
-    echo "$IP_ADDR:/home/rd/traffic_import /home/rd/traffic_import nfs defaults 0 0" >> /etc/fstab
+    rm -f /etc/auto.rd.audiostore
+    cat /usr/share/rivendell-install/auto.rd.audiostore.template | sed s/@IP_ADDRESS@/$IP_ADDR/g > /etc/auto.rd.audiostore
+
+    rm -f /home/rd/rd_xfer
+    ln -s /misc/rd_xfer /home/rd/rd_xfer
+    rm -f /home/rd/music_export
+    ln -s /misc/music_export /home/rd/music_export
+    rm -f /home/rd/music_import
+    ln -s /misc/music_import /home/rd/music_import
+    rm -f /home/rd/traffic_export
+    ln -s /misc/traffic_export /home/rd/traffic_export
+    rm -f /home/rd/traffic_import
+    ln -s /misc/traffic_import /home/rd/traffic_import
+    rm -f /etc/auto.misc
+    cat /usr/share/rivendell-install/auto.misc.client_template | sed s/@IP_ADDRESS@/$IP_ADDR/g > /etc/auto.misc
+    systemctl enable autofs
 
     #
     # Configure Rivendell

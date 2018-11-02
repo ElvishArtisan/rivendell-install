@@ -1,0 +1,4 @@
+# THE CONTENTS OF THIS FILE ARE MANAGED BY RIVENDELL'S RDSELECT SYSTEM!
+# DO NOT HAND EDIT!
+
+/var/snd	-fstype=nfs,rw,noexec	@IP_ADDRESS@:/var/snd
