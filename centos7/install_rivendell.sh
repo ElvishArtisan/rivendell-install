@@ -171,6 +171,24 @@ if test $MODE = "server" ; then
     # Create Rivendell Database
     #
     rddbmgr --create --generate-audio
+
+    #
+    # Create common directories
+    #
+    mkdir -p /home/rd/rd_xfer
+    chown rd:rd /home/rd/rd_xfer
+
+    mkdir -p /home/rd/music_export
+    chown rd:rd /home/rd/music_export
+
+    mkdir -p /home/rd/music_import
+    chown rd:rd /home/rd/music_import
+
+    mkdir -p /home/rd/traffic_export
+    chown rd:rd /home/rd/traffic_export
+
+    mkdir -p /home/rd/traffic_import
+    chown rd:rd /home/rd/traffic_import
 fi
 
 if test $MODE = "standalone" ; then
@@ -184,6 +202,24 @@ if test $MODE = "standalone" ; then
     # Create Rivendell Database
     #
     rddbmgr --create --generate-audio
+
+    #
+    # Create common directories
+    #
+    mkdir -p /home/rd/rd_xfer
+    chown rd:rd /home/rd/rd_xfer
+
+    mkdir -p /home/rd/music_export
+    chown rd:rd /home/rd/music_export
+
+    mkdir -p /home/rd/music_import
+    chown rd:rd /home/rd/music_import
+
+    mkdir -p /home/rd/traffic_export
+    chown rd:rd /home/rd/traffic_export
+
+    mkdir -p /home/rd/traffic_import
+    chown rd:rd /home/rd/traffic_import
 fi
 
 if test $MODE = "client" ; then

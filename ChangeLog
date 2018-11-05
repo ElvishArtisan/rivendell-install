@@ -213,3 +213,7 @@
 	for all install types.
 2018-11-02 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 0.9.0rd3alpha02.
+2018-11-05 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a bug in the 'install_rivendell.sh' script that failed
+	to create the source directories for 'rd_xfer/', etc when invoked
+	in '--server' and '--standalone' mode.
