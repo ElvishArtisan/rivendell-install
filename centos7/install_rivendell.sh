@@ -153,7 +153,7 @@ mkdir -p /etc/skel/Desktop
 cp /usr/share/rivendell-install/skel/paravel_support.pdf /etc/skel/Desktop/First\ Steps.pdf
 ln -s /usr/share/rivendell/opsguide.pdf /etc/skel/Desktop/Operations\ Guide.pdf
 tar -C /etc/skel -zxf /usr/share/rivendell-install/xfce-config.tgz
-adduser -c Rivendell\ Audio --groups audio rd
+adduser -c Rivendell\ Audio --groups audio,wheel rd
 chown -R rd:rd /home/rd
 chmod 0755 /home/rd
 patch /etc/gdm/custom.conf /usr/share/rivendell-install/autologin.patch
