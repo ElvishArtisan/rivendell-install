@@ -228,3 +228,5 @@
 2018-11-26 Fred Gleason <fredg@paravelsystems.com>
 	* Added blacklist entry for the 'snd-asihpi' module on CentOS 7
 	installs.
+2018-11-26 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.9.0rd3alpha05.
