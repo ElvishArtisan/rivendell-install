@@ -223,3 +223,5 @@
 	* Added the 'rd' user to the 'wheel' group.
 2018-11-06 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 0.9.0rd3alpha04.
+2018-11-26 Fred Gleason <fredg@paravelsystems.com>
+	* Added the 'taglib-devel' package to 'install_rivendell_devel.sh'.
