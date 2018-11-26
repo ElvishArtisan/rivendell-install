@@ -20,7 +20,8 @@
 ## Use automake to process this into a Makefile.in
 
 
-EXTRA_DIST = disable-selinux.patch\
+EXTRA_DIST = asihpi.conf\
+             disable-selinux.patch\
              install_rivendell.sh\
              install_mingw32_devel.sh\
              install_rivendell_devel.sh\

@@ -52,6 +52,7 @@ cp centos7/install_rivendell.sh $RPM_BUILD_ROOT/root/
 cp centos7/install_rivendell_devel.sh $RPM_BUILD_ROOT/root/
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/rivendell-install
+cp centos7/asihpi.conf $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp centos7/disable-selinux.patch $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp centos7/visual.sh $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp centos7/qt_plugins_3.3rc $RPM_BUILD_ROOT%{_datadir}/rivendell-install/

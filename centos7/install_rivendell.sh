@@ -140,6 +140,7 @@ systemctl start ntpd
 systemctl enable ntpd
 rm -f /etc/asound.conf
 cp /usr/share/rivendell-install/visual.sh /etc/profile.d/
+cp /usr/share/rivendell-install/asihpi.conf /etc/modprobe.d/
 cp /usr/share/rivendell-install/asound.conf /etc/
 cp /usr/share/rivendell-install/*.repo /etc/yum.repos.d/
 cp /usr/share/rivendell-install/RPM-GPG-KEY* /etc/pki/rpm-gpg/
