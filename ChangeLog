@@ -234,3 +234,5 @@
 	* Changed the ALPHA warning to a BETA warning in 'README'.
 	* Replaced the patch to set SeLinux Permissive mode on CentOS 7
 	with a complete config file.
+2019-03-08 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.9.0rd3beta0.
