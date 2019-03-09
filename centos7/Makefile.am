@@ -21,7 +21,7 @@
 
 
 EXTRA_DIST = asihpi.conf\
-             disable-selinux.patch\
+             selinux.config\
              install_rivendell.sh\
              install_mingw32_devel.sh\
              install_rivendell_devel.sh\

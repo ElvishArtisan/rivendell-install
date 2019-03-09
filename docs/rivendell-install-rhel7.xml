@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <article xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
 <info>
-  <title>Installing Rivendell ALPHA on a CentOS-7 System</title>
+  <title>Installing Rivendell BETA on a CentOS-7 System</title>
   <author>
     <personname>
       <firstname>Fred</firstname>
@@ -12,11 +12,11 @@
 </info>
 
 <sect1>
-  <title>ALPHA Warning</title>
+  <title>BETA Warning</title>
   <para>
-    These instructions are for installing an ALPHA TEST version of Rivendell.
-    As such, it and the version of Rivendell that it installs are virtually
-    guaranteed to contain bugs, possibly severe ones that could
+    These instructions are for installing a BETA TEST version of Rivendell.
+    As such, it and the version of Rivendell that it installs are quite
+    likely to contain bugs, possibly severe ones that could
     cause DOWNTIME and LOSS OF DATA. It is intended for testing purposes, and
     should not be used in 'production' situations.
   </para>
