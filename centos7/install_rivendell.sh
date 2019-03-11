@@ -139,6 +139,7 @@ cp /usr/share/rivendell-install/no_screen_blank.conf /etc/X11/xorg.conf.d/
 mkdir -p /etc/skel/Desktop
 cp /usr/share/rivendell-install/skel/rog-1.3.3.pdf /etc/skel/Desktop/Rivendell\ Ops\ Guide.pdf
 cp /usr/share/rivendell-install/skel/paravel_support.pdf /etc/skel/Desktop/First\ Steps.pdf
+tar -C /etc/skel -zxf /usr/share/rivendell-install/xfce-config.tgz
 mkdir -p /etc/skel/.qt
 cp /usr/share/rivendell-install/qt_plugins_3.3rc /etc/skel/.qt/
 cp /usr/share/rivendell-install/qtrc /etc/skel/.qt/

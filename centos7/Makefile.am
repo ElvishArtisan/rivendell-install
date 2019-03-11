@@ -29,7 +29,8 @@ EXTRA_DIST = asihpi.conf\
              qt_plugins_3.3rc\
              qtrc\
              smb.conf\
-             visual.sh
+             visual.sh\
+             xfce-config.tgz
 
 CLEANFILES = *~
 

@@ -59,6 +59,7 @@ cp centos7/qt_plugins_3.3rc $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp centos7/qtrc $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp centos7/smb.conf $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp centos7/limits.conf $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
+cp centos7/xfce-config.tgz $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/asound.conf $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/*.repo $RPM_BUILD_ROOT%{_datadir}/rivendell-install/
 cp common/RPM-GPG-KEY* $RPM_BUILD_ROOT%{_datadir}/rivendell-install/

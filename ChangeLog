@@ -197,3 +197,6 @@
 2019-03-11 Fred Gleason <fredg@paravelsystems.com>
         * Modified the RHEL7 installation instructions to have the user
         enable 'Automatically connect' for the network interface.
+2019-03-11 Fred Gleason <fredg@paravelsystems.com>
+       * Added custom tailored default configuration for Xfce4 to the
+       'centos7/' installer.
