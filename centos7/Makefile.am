@@ -20,7 +20,8 @@
 ## Use automake to process this into a Makefile.in
 
 
-EXTRA_DIST = selinux.config\
+EXTRA_DIST = asihpi.conf\
+             selinux.config\
              install_rivendell.sh\
              install_mingw32_devel.sh\
              install_rivendell_devel.sh\

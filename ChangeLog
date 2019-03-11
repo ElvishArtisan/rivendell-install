@@ -191,3 +191,6 @@
 2019-03-11 Fred Gleason <fredg@paravelsystems.com>
 	* Replaced the patch to set SeLinux Permissive mode on CentOS 7
 	with a complete config file.
+2019-03-11 Fred Gleason <fredg@paravelsystems.com>
+        * Added blacklist entry for the 'snd-asihpi' module on CentOS 7
+        installs.
