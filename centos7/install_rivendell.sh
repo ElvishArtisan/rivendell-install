@@ -119,7 +119,7 @@ fi
 #
 # Install Rivendell
 #
-patch /etc/selinux/config /usr/share/rivendell-install/disable-selinux.patch
+cp -f /usr/share/rivendell-install/selinux.config /etc/selinux/config
 systemctl disable firewalld
 yum -y remove chrony openbox
 systemctl start ntpd

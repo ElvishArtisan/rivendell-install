@@ -2,7 +2,7 @@
 ##
 ## centos7/Makefile.am for the rivendell-install package.
 ##
-##   (C) Copyright 2016 Fred Gleason <fredg@paravelsystems.com>
+##   (C) Copyright 2016-2019 Fred Gleason <fredg@paravelsystems.com>
 ##
 ##   This program is free software; you can redistribute it and/or modify
 ##   it under the terms of the GNU General Public License version 2 as
@@ -20,7 +20,7 @@
 ## Use automake to process this into a Makefile.in
 
 
-EXTRA_DIST = disable-selinux.patch\
+EXTRA_DIST = selinux.config\
              install_rivendell.sh\
              install_mingw32_devel.sh\
              install_rivendell_devel.sh\
