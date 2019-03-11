@@ -200,3 +200,5 @@
 2019-03-11 Fred Gleason <fredg@paravelsystems.com>
        * Added custom tailored default configuration for Xfce4 to the
        'centos7/' installer.
+2019-03-11 Fred Gleason <fredg@paravelsystems.com>
+	*Incremented the package version to 0.9.1.
