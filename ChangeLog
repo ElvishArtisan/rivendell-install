@@ -194,3 +194,6 @@
 2019-03-11 Fred Gleason <fredg@paravelsystems.com>
         * Added blacklist entry for the 'snd-asihpi' module on CentOS 7
         installs.
+2019-03-11 Fred Gleason <fredg@paravelsystems.com>
+        * Modified the RHEL7 installation instructions to have the user
+        enable 'Automatically connect' for the network interface.

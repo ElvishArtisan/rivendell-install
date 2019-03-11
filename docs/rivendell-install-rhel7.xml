@@ -300,23 +300,40 @@
   </para>
   <para>
     To autoconfigure a connection via DHCP and bring it up, use the arrow keys
-    to select the <computeroutput>Activate a connection</computeroutput>
+    to select the <computeroutput>Edit a connection</computeroutput>
     menu item and then press <userinput>ENTER</userinput>.
   </para>
   <para>
     <mediaobject>
       <imageobject>
-	<imagedata fileref="rhel7-nmtui-activate-menu.png" scale="90"/>
+	<imagedata fileref="rhel7-nmtui-edit-menu.png" scale="90"/>
       </imageobject>
     </mediaobject>
   </para>
   <para>
     Using the arrow keys and the spacebar, select the desired network
-    interface on the left, then select the
-    <computeroutput>Activate</computeroutput> item on the right and press
-    <userinput>ENTER</userinput>. Finally, select the
-    <computeroutput>Quit</computeroutput> and press <userinput>ENTER</userinput>
-    to exit the utility.
+    interface on the left, then press <userinput>ENTER</userinput> to
+    open the <computeroutput>Edit Connection</computeroutput> screen.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+       <imagedata fileref="rhel7-nmtui-editconnection-menu.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    Use the <userinput>Down Arrow</userinput> key to move the red cursor to the
+    <computeroutput>Automatically connect</computeroutput> box,
+    press the <userinput>Spacebar</userinput> to put an 'X' in the box and
+    then continue pressing
+    the <userinput>Down Arrow</userinput> key until the
+    <computeroutput>&lt;OK&gt;</computeroutput>
+    button is highlighted. Press <userinput>Enter</userinput> to exit the
+    screen. Select the <computeroutput>&lt;Back&gt;</computeroutput> button
+    and press <userinput>Enter</userinput> again. Finally, select
+    <computeroutput>Quit</computeroutput> on the main menu and press
+    <userinput>Enter</userinput> to exit the utility.
   </para>
 
   <para>
