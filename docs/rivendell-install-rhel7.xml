@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <article xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
 <info>
-  <title>Installing Rivendell BETA on a CentOS-7 System</title>
+  <title>Installing Rivendell 3 on a CentOS-7 System</title>
   <author>
     <personname>
       <firstname>Fred</firstname>
@@ -12,23 +12,12 @@
 </info>
 
 <sect1>
-  <title>BETA Warning</title>
-  <para>
-    These instructions are for installing a BETA TEST version of Rivendell.
-    As such, it and the version of Rivendell that it installs are quite
-    likely to contain bugs, possibly severe ones that could
-    cause DOWNTIME and LOSS OF DATA. It is intended for testing purposes, and
-    should not be used in 'production' situations.
-  </para>
-</sect1>
-
-<sect1>
   <title>Introduction</title>
   <sect2>
     <title>Overview</title>
     <para>
       This technical note contains procedures for installing the
-      Rivendell Radio Automation System on a system running CentOS -7.
+      Rivendell Radio Automation System on a system running CentOS-7.
       While the screenshots are specific to CentOS-7, these instructions
       are also applicable to other RedHat Enterprise 7 (RHEL-7) -based
       distributions. Such distributions include:
@@ -475,8 +464,7 @@
     <listitem>
       <para>
 	Set the MariaDB administrator password with the following command
-	(substitute your password for <replaceable>pwd</replaceable> and the
-	name of the system for <replaceable>host</replaceable>):
+	(substitute your password for <replaceable>pwd</replaceable>):
       </para>
       <para>
 	<userinput>echo "SET PASSWORD FOR root@localhost = 

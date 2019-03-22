@@ -236,3 +236,5 @@
 	with a complete config file.
 2019-03-08 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 0.9.0rd3beta0.
+2019-03-21 Fred Gleason <fredg@paravelsystems.com>
+	* Removed the BETA warning.
