@@ -249,3 +249,5 @@
 	* Removed 'centos7/qtrc'.
 2019-07-01 Fred Gleason <fredg@paravelsystems.com>
 	* Removed 'common/rog-1.3.3.pdf'.
+2019-07-01 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.9.0rd3beta01.
