@@ -31,7 +31,6 @@ EXTRA_DIST = adobe-linux-x86_64.repo\
              rdairplay_skin.png\
              rdpanel_skin.png\
              Reyware.repo\
-             rog-1.3.3.pdf\
              RPM-GPG-KEY-adobe-linux\
              RPM-GPG-KEY-Reyware
 
