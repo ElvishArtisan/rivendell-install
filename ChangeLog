@@ -244,3 +244,6 @@
 	* Removed support for RHEL6.
 2019-07-01 Fred Gleason <fredg@paravelsystems.com>
 	* Set the default report editor to gedit(1).
+2019-07-01 Fred Gleason <fredg@paravelsystems.com>
+	* Removed 'centos7/qt_plugins_3.3rc'.
+	* Removed 'centos7/qtrc'.

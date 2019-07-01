@@ -26,8 +26,6 @@ EXTRA_DIST = asihpi.conf\
              install_mingw32_devel.sh\
              install_rivendell_devel.sh\
              limits.conf\
-             qt_plugins_3.3rc\
-             qtrc\
              rsyslog.conf.patch\
              smb.conf\
              visual.sh\
