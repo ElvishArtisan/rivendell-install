@@ -4,7 +4,7 @@
 ##
 ## Use automake to process this into a Makefile.in
 ##
-##   (C) Copyright 2016 Fred Gleason <fredg@paravelsystems.com>
+##   (C) Copyright 2016-2019 Fred Gleason <fredg@paravelsystems.com>
 ##
 ##   This program is free software; you can redistribute it and/or modify
 ##   it under the terms of the GNU General Public License version 2 as
@@ -24,8 +24,7 @@ if DOCBOOK_AM
   DOCBOOK_AM_OPT = docs
 endif
 
-SUBDIRS = centos6\
-          centos7\
+SUBDIRS = centos7\
           common\
           $(DOCBOOK_AM_OPT)
 
@@ -54,7 +53,6 @@ EXTRA_DIST = autogen.sh\
              get_distro.pl\
              get_target.sh\
              PACKAGE_VERSION\
-             rivendell-install-rhel6.spec.in\
              rivendell-install-rhel7.spec.in\
              rivendell-install-web.spec.in
 

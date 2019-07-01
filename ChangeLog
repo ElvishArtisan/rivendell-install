@@ -240,3 +240,5 @@
 	* Removed the BETA warning.
 2019-07-01 Fred Gleason <fredg@paravelsystems.com>
 	* Added 'centos7/rsyslog.conf.patch'.
+2019-07-01 Fred Gleason <fredg@paravelsystems.com>
+	* Removed support for RHEL6.
