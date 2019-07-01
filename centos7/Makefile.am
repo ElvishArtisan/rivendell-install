@@ -1,8 +1,8 @@
-## automake.am
+## Makefile.am
 ##
 ## centos7/Makefile.am for the rivendell-install package.
 ##
-##   (C) Copyright 2016 Fred Gleason <fredg@paravelsystems.com>
+##   (C) Copyright 2016-2019 Fred Gleason <fredg@paravelsystems.com>
 ##
 ##   This program is free software; you can redistribute it and/or modify
 ##   it under the terms of the GNU General Public License version 2 as
@@ -28,6 +28,7 @@ EXTRA_DIST = asihpi.conf\
              limits.conf\
              qt_plugins_3.3rc\
              qtrc\
+             rsyslog.conf.patch\
              smb.conf\
              visual.sh\
              xfce-config.tgz

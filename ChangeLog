@@ -238,3 +238,5 @@
 	* Incremented the package version to 0.9.0rd3beta0.
 2019-03-21 Fred Gleason <fredg@paravelsystems.com>
 	* Removed the BETA warning.
+2019-07-01 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'centos7/rsyslog.conf.patch'.

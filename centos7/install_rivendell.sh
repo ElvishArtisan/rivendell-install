@@ -133,6 +133,7 @@ fi
 #
 # Install Rivendell
 #
+patch -p0 /etc/rsyslog.conf /usr/share/rivendell-install/rsyslog.conf.patch
 cp -f /usr/share/rivendell-install/selinux.config /etc/selinux/config
 systemctl disable firewalld
 yum -y remove chrony openbox

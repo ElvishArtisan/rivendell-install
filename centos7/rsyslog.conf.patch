@@ -1,0 +1,14 @@
+--- rsyslog.conf-orig	2019-07-01 13:35:50.074794936 -0400
++++ rsyslog.conf	2019-07-01 13:39:35.493519219 -0400
+@@ -49,9 +49,9 @@
+ # Logging much else clutters up the screen.
+ #kern.*                                                 /dev/console
+ 
+-# Log anything (except mail) of level info or higher.
++# Log anything (except mail and Rivendell) of level info or higher.
+ # Don't log private authentication messages!
+-*.info;mail.none;authpriv.none;cron.none                /var/log/messages
++*.info;mail.none;authpriv.none;cron.none;local7.none    /var/log/messages
+ 
+ # The authpriv file has restricted access.
+ authpriv.*                                              /var/log/secure
