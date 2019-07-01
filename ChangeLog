@@ -242,3 +242,5 @@
 	* Added 'centos7/rsyslog.conf.patch'.
 2019-07-01 Fred Gleason <fredg@paravelsystems.com>
 	* Removed support for RHEL6.
+2019-07-01 Fred Gleason <fredg@paravelsystems.com>
+	* Set the default report editor to gedit(1).
