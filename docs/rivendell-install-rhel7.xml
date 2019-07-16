@@ -375,7 +375,7 @@
   </para>
   <para>
     <userinput>wget
-    http://download.paravelsystems.com/CentOS/7rd3beta/Paravel-Rivendell3-Test.repo
+    http://download.paravelsystems.com/CentOS/7rd3/Paravel-Rivendell3.repo
     -P /etc/yum.repos.d/</userinput>
   </para>
   <para>

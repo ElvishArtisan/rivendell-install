@@ -251,3 +251,5 @@
 	* Removed 'common/rog-1.3.3.pdf'.
 2019-07-01 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 0.9.0rd3beta01.
+2019-07-16 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed the download path for the CentOS 7 installation repo.
