@@ -253,3 +253,5 @@
 	* Incremented the package version to 0.9.0rd3beta01.
 2019-07-16 Fred Gleason <fredg@paravelsystems.com>
 	* Fixed the download path for the CentOS 7 installation repo.
+2019-08-02 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 1.0.0.
