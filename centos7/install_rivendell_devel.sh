@@ -4,7 +4,7 @@
 #
 # Install the Rivendell development tools on a CentOS 7 system
 #
-#    Copyright (C) 2016 Fred Gleason <fredg@paravelsystems.com>
+#    Copyright (C) 2016-2020 Fred Gleason <fredg@paravelsystems.com>
 #
 #    This program is free software; you can redistribute it and/or modify
 #    it under the terms of version 2 of the GNU General Public License as
@@ -24,7 +24,7 @@
 #
 # Install Packages
 #
-yum -y install git gcc-c++ automake autoconf libtool qt-devel libcurl-devel cdparanoia-devel hpklinux-devel alsa-lib-devel jack-audio-connection-kit-devel libsamplerate-devel libsndfile-devel id3lib-devel libvorbis-devel flac-devel pam-devel soundtouch-devel twolame-devel libmad-devel rpm-build createrepo fop docbook5-style-xsl libxslt kernel-devel rpm-sign man-pages openssl-devel taglib-devel
+yum -y install git gcc-c++ automake autoconf libtool qt-devel libcurl-devel cdparanoia-devel hpklinux-devel alsa-lib-devel jack-audio-connection-kit-devel libsamplerate-devel libsndfile-devel id3lib-devel libvorbis-devel flac-devel pam-devel soundtouch-devel twolame-devel libmad-devel lame-devel rpm-build createrepo fop docbook5-style-xsl libxslt kernel-devel rpm-sign man-pages openssl-devel taglib-devel libmusicbrainz5-devel libdiscid-devel libcoverart libcoverart-devel
 
 #
 # Configure Environment
