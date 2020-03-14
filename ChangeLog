@@ -259,3 +259,5 @@
 	* Added 'libmusicbrainz5-devel', 'libdiscid-devel', 'libcoverart'
 	and 'libcoverart-devel' packages to the 'install_rivendell_devel.sh'
 	script.
+2020-03-13 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 1.0.1.
