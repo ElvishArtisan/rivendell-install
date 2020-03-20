@@ -261,3 +261,5 @@
 	script.
 2020-03-13 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 1.0.1.
+2020-03-20 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'centos7/rivendell-install-virtserv.sh'.

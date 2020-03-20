@@ -2,7 +2,7 @@
 ##
 ## centos7/Makefile.am for the rivendell-install package.
 ##
-##   (C) Copyright 2016-2019 Fred Gleason <fredg@paravelsystems.com>
+##   (C) Copyright 2016-2020 Fred Gleason <fredg@paravelsystems.com>
 ##
 ##   This program is free software; you can redistribute it and/or modify
 ##   it under the terms of the GNU General Public License version 2 as
@@ -25,6 +25,7 @@ EXTRA_DIST = asihpi.conf\
              install_rivendell.sh\
              install_mingw32_devel.sh\
              install_rivendell_devel.sh\
+             install_rivendell_virtserv.sh\
              limits.conf\
              rsyslog.conf.patch\
              smb.conf\
