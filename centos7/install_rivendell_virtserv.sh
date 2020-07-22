@@ -24,7 +24,7 @@
 #
 # Install Packages
 #
-yum -y install qemu-kvm libvirt libvirt-python libguestfs-tools virt-install virt-manager
+yum -y install qemu-kvm libvirt libvirt-python libguestfs-tools virt-install virt-manager virt-top
 
 #
 # Enable and start the hypervisor
@@ -36,5 +36,5 @@ systemctl start libvirtd
 # Finish Up
 #
 echo
-echo "Installation of the Rivendell development tools is complete."
+echo "Installation of the hypervisor tools is complete."
 echo
