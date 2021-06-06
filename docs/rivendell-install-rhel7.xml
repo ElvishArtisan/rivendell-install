@@ -380,7 +380,7 @@
   </para>
   <para>
     <userinput>wget 
-    http://download.paravelsystems.com/CentOS/7/RPM-GPG-KEY-Paravel-Broadcast
+    http://download.paravelsystems.com/CentOS/7rd3/RPM-GPG-KEY-Paravel-Broadcast
     -P /etc/pki/rpm-gpg</userinput>
   </para>
   <para>
