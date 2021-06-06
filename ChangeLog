@@ -268,3 +268,5 @@
 	'install_rivendell_virtserv.sh' script.
 2021-06-05 Fred Gleason <fredg@paravelsystems.com>
 	* Fixed an error in a URL in 'docs/rivendell-install-rhel7.xml'.
+2021-06-05 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 1.0.2.
