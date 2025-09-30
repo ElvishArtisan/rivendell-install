@@ -134,7 +134,8 @@ fi
 # Install Rivendell
 #
 patch -p0 /etc/rsyslog.conf /usr/share/rivendell-install/rsyslog.conf.patch
-cp -f /usr/share/rivendell-install/selinux.config /etc/selinux/config
+rm -f /etc/selinux/config
+cp /usr/share/rivendell-install/selinux.config /etc/selinux/config
 systemctl disable firewalld
 yum -y remove chrony openbox
 systemctl start ntpd
@@ -166,7 +167,8 @@ if test $MODE = "server" ; then
     #
     # Initialize Automounter
     #
-    cp -f /usr/share/rivendell-install/auto.misc.template /etc/auto.misc
+    rm -f /etc/auto.misc
+    cp /usr/share/rivendell-install/auto.misc.template /etc/auto.misc
     systemctl enable autofs
 
     #
@@ -198,7 +200,8 @@ if test $MODE = "standalone" ; then
     #
     # Initialize Automounter
     #
-    cp -f /usr/share/rivendell-install/auto.misc.template /etc/auto.misc
+    rm -f /etc/auto.misc
+    cp /usr/share/rivendell-install/auto.misc.template /etc/auto.misc
     systemctl enable autofs
 
     #

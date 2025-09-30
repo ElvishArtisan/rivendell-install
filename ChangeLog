@@ -275,3 +275,6 @@
 	* Modified the 'Reyware' repo to use TLS.
 2022-12-16 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 1.0.3.
+2025-09-30 Fred Gleason <fredg@paravelsystems.com>
+	* fixed regressions in 'centos7/install_rivendell.sh' that caused
+	file copies to fail.
