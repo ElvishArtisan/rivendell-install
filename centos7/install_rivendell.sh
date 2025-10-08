@@ -77,13 +77,13 @@ if test $MODE = "server" ; then
     # Enable DB Access for localhost
     #
     echo "CREATE DATABASE Rivendell;" | mysql -u root
-    echo "CREATE USER 'rduser'@'localhost' IDENTIFIED BY 'letmein';" | mysql -u root
+    echo "CREATE USER 'rduser'@'localhost' IDENTIFIED BY 'hackme';" | mysql -u root
     echo "GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES ON Rivendell.* TO 'rduser'@'localhost';" | mysql -u root
 
     #
     # Enable DB Access for all remote hosts
     #
-    echo "CREATE USER 'rduser'@'%' IDENTIFIED BY 'letmein';" | mysql -u root
+    echo "CREATE USER 'rduser'@'%' IDENTIFIED BY 'hackme';" | mysql -u root
     echo "GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES ON Rivendell.* TO 'rduser'@'%';" | mysql -u root
 
     #
@@ -120,7 +120,7 @@ if test $MODE = "standalone" ; then
     # Enable DB Access for localhost
     #
     echo "CREATE DATABASE Rivendell;" | mysql -u root
-    echo "CREATE USER 'rduser'@'localhost' IDENTIFIED BY 'letmein';" | mysql -u root
+    echo "CREATE USER 'rduser'@'localhost' IDENTIFIED BY 'hackme';" | mysql -u root
     echo "GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES ON Rivendell.* TO 'rduser'@'localhost';" | mysql -u root
 
     #
@@ -175,7 +175,7 @@ if test $MODE = "server" ; then
     # Create Rivendell Database
     #
     rddbmgr --create --generate-audio
-    echo "update STATIONS set REPORT_EDITOR_PATH=\"/usr/bin/gedit\"" | mysql -u rduser -pletmein Rivendell
+    echo "update STATIONS set REPORT_EDITOR_PATH=\"/usr/bin/gedit\"" | mysql -u rduser -phackme Rivendell
 
     #
     # Create common directories
@@ -208,7 +208,7 @@ if test $MODE = "standalone" ; then
     # Create Rivendell Database
     #
     rddbmgr --create --generate-audio
-    echo "update STATIONS set REPORT_EDITOR_PATH=\"/usr/bin/gedit\"" | mysql -u rduser -pletmein Rivendell
+    echo "update STATIONS set REPORT_EDITOR_PATH=\"/usr/bin/gedit\"" | mysql -u rduser -phackme Rivendell
 
     #
     # Create common directories

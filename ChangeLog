@@ -278,3 +278,6 @@
 2025-09-30 Fred Gleason <fredg@paravelsystems.com>
 	* fixed regressions in 'centos7/install_rivendell.sh' that caused
 	file copies to fail.
+2025-10-08 Fred Gleason <fredg@paravelsystems.com>
+	* Changed the default Rivendell DB password from 'letmein' to
+	'hackme'.
